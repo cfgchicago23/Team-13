@@ -1,14 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
-import { PaperProvider } from 'react-native-paper';
 import { StyleSheet, Text, View } from 'react-native';
-import Landing from "./src/screens/LandingScreen/LandingScreen";
 
-export default function App() {
+export default function EducationScreen() {
   return (
-    <Landing />
+    <View style={styles.container}>
+      <Text>Open up App.js to start working on your app!</Text>
+      <StatusBar style="auto" />
+    </View>
   );
 }
-
 
 const styles = StyleSheet.create({
   container: {
@@ -18,4 +18,3 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
-
