@@ -5,7 +5,9 @@ import Landing from "./src/screens/LandingScreen/LandingScreen";
 
 export default function App() {
   return (
-    <Landing />
+    <PaperProvider>
+      <Text variant="displayLarge">Display Large</Text> <App />
+    </PaperProvider>
   );
 }
 
