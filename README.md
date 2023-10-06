@@ -11,3 +11,4 @@ npm install
 ```
 npm start
 ```
+type "w" when prompted to
