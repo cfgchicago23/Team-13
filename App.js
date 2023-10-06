@@ -1,4 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
+import { PaperProvider } from 'react-native-paper';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
@@ -18,3 +19,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+
