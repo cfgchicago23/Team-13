@@ -11,4 +11,4 @@ npm install
 ```
 npm start
 ```
-type "w" when prompted to
+type "i", "a", or "w" when prompted for "ios", "android", "web"
