@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 
 import React, { useState } from 'react';
-import { PaperProvider, Text, TextInput} from 'react-native-paper';
+import { PaperProvider } from 'react-native-paper';
 import { StyleSheet, View } from 'react-native';
 import Landing from "./src/screens/LandingScreen/LandingScreen";
 import { initFirebaseApp } from './src/utils/firebase';
