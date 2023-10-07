@@ -10,7 +10,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-export default function Example({ navigation }) {
+export default function Landing({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.hero}>
