@@ -30,3 +30,4 @@ export function AppWrapped() {
     </PaperProvider>
   );
 }
+export default App;
