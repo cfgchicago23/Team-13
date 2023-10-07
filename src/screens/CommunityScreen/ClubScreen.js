@@ -1,4 +1,4 @@
-import { Modal, Portal, Text, Button, PaperProvider } from 'react-native-paper';
+import { Modal, Caption, Text, Button, PaperProvider } from 'react-native-paper';
 import { useEffect, useState, React } from "react";
 import { StyleSheet } from "react-native";
 import { collection, getDocs } from "firebase/firestore"
@@ -23,7 +23,7 @@ export default function Club({ route }) {
   return (
     <>
       <PaperProvider>
-        <Text>{club.name}</Text>
+        <Caption>{club.name}</Caption>
         <Text>{club.country}</Text>
         <Text>{club.membercount}</Text>
 
