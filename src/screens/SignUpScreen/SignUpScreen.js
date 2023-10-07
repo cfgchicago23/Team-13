@@ -17,11 +17,8 @@ const Signup = ({navigation}) => {
     }
   }
 
-
   return (
     <>
-
-
       <TextInput
         label="Email: "
         value={email}
