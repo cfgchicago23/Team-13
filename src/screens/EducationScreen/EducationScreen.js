@@ -14,12 +14,107 @@ const lessons = [
   {
     title: "Being a Good Friend",
     steps: 3,
-    contents: ["Story", "Maintaining a Balanced Diet", "Tips for Planning Meals", "Grow Your Own Garden", "Journal"]
+    contents: ["Story", "Good Friends and Bad Friends", "Journal"]
   },
   {
     title: "Making Healthy Choices",
     steps: 5,
-    contents: ["Story", "Good Friends and Bad Friends", "Journal"]
+    contents: ["Story", "Maintaining a Balanced Diet", "Tips for Planning Meals", "Grow Your Own Garden", "Journal"]
+  },
+  {
+    title: "What Makes You Happy?",
+    steps: 3,
+    contents: ["Story", "Reflection Questions", "Journal"]
+  },
+  {
+    title: "Self-Image",
+    steps: 4,
+    contents: ["Story", "Reflection Questions", "Dove Evolution Campaign", "Journal"]
+  },
+  {
+    title: "Choosing Good Friends",
+    steps: 4,
+    contents: ["Story", "Reflection Questions","Friendship Letters", "Journal"]
+  },
+  {
+    title: "Peer Pressure",
+    steps: 3,
+    contents: ["Story", "Reflection Questions", "Journal"]
+  },
+  {
+    title: "Thinking Positively",
+    steps: 5,
+    contents: ["Story", "Reflection Questions", "Practicing Gratitude", "Positively Me", "Journal"]
+  },
+  {
+    title: "Staying Optimistic",
+    steps: 4,
+    contents: ["Story", "Reflection Questions", "Thank You & Encouragement Cards","Journal"]
+  },
+  {
+    title: "Stress Less",
+    steps: 4,
+    contents: ["Story", "Reflection Questions", "Weekly Planners","Journal"]
+  },
+  {
+    title: "Influencing Well",
+    steps: 3,
+    contents: ["Story", "Reflection Questions", "Journal"]
+  },
+  {
+    title: "Facing Obstacles",
+    steps: 3,
+    contents: ["Story", "Reflection Questions", "Journal"]
+  },
+  {
+    title: "Speaking out",
+    steps: 4,
+    contents: ["Story", "Reflection Questions","Nature Prints", "Journal"]
+  },
+  {
+    title: "Enduring Hardship",
+    steps: 3,
+    contents: ["Story", "Reflection Questions", "Journal"]
+  },
+  {
+    title: "Dealing with Change",
+    steps: 4,
+    contents: ["Story", "Reflection Questions", "Painting Emotions","Journal"]
+  },
+  {
+    title: "Discovering Potential?",
+    steps: 5,
+    contents: ["Story", "Reflection Questions", "I Love Being a Girl", "Footprints","Journal"]
+  },
+  {
+    title: "Relationships",
+    steps: 3,
+    contents: ["Story", "Reflection Questions", "Journal"]
+  },
+  {
+    title: "Staying Safe",
+    steps: 4,
+    contents: ["Story", "Chart","Reflection Questions", "Journal"]
+  },
+  {
+    title: "It's Ok to Say No",
+    steps: 3,
+    contents: ["Story", "Reflection Questions", "Journal"]
+  },
+  {
+    title: "Setting Goals",
+    steps: 3,
+    contents: ["Story", "Reflection Questions","Venn Diagrams", "Journal"]
+  },
+  {
+    title: "Learning How to Lead",
+    steps: 4,
+    contents: ["Story", "Reflection Questions", "Card Making","Journal"]
+  },
+  {
+    title: "Being a Role Model",
+    steps: 3,
+    contents: ["Story", "Reflection Questions", "Future Self-Portrait","Journal"]
   },
 ];
 
