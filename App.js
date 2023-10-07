@@ -4,12 +4,12 @@ import { StyleSheet, Text, View } from 'react-native';
 import Landing from "./src/screens/LandingScreen/LandingScreen";
 import { initFirebaseApp } from './src/utils/firebase';
 
-initFirebaseApp()
+
 
 export default function App() {
   return (
     <PaperProvider>
-      <Text variant="displayLarge">Display Large</Text> <App />
+      <Text variant="displayLarge">Display Large</Text> 
     </PaperProvider>
   );
 }
