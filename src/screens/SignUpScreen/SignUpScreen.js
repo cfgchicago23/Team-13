@@ -8,17 +8,14 @@ const Signup = ({navigation}) => {
   const [passWord, setPassword] = useState("");
 
   const sendData = async () => {
-    navigation.navigate("Community")
-    // const user = await signUp(email, passWord)
-    // if (user != Null) {
-    //   naviation.navigate("Community")
-    // }
-    // else {
-    //   console.log("Invalid User / Password")
-    // }
-
+    const user = await signUp(email, password)
+    if (user) {
+      naviation.navigate("Community")
+    }
+    else {
+      console.log("Invalid Email / Password")
+    }
   }
-
 
   return (
     <>
