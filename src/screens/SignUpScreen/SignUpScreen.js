@@ -1,9 +1,9 @@
 import React, { useState, useCallback } from 'react';
-import { Appbar, PaperProvider, Text, TextInput, Button } from 'react-native-paper';
-import { View } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native';
+import { Appbar, PaperProvider, Button } from 'react-native-paper';
 import { initFirebaseApp, getFirebaseStore, signUp } from '../../utils/firebase'
 
-const Signup = ({naviation}) => {
+const Signup = ({navigation}) => {
   const [userName, setUserName] = useState("");
   const [passWord, setPassword] = useState("");
 
@@ -22,23 +22,48 @@ const Signup = ({naviation}) => {
 
   return (
     <>
+    <View style={styles.container}>
+
+        <Text style={styles.header}>Sign Up</Text>
+
+        <View style={styles.hero}>
+            <Image
+                source={require('./empower.png')}
+                style={[styles.logo, styles.heroImage]}
+                resizeMode="contain"
+             />
+        </View>
+        <View style={styles.space}></View>
 
 
-      <TextInput
-        label="Username: "
-        value={userName}
-        onChange={(event) => { setUserName(event.target.value) }}
-      />
+        <View style={styles.hero}>
+            
+            <Text style={styles.label}>Username :</Text>
+                <TextInput
+                label="Username: "
+                value={userName}
+                onChange={(event) => { setUserName(event.target.value) }}
+                style={styles.input}
+           />
 
-      <TextInput
-        label="Password: "
-        value={passWord}
-        onChange={(event) => { setPassword(event.target.value) }}
-      />
+            <Text style={styles.label}>Password :</Text>
+                <TextInput
+                label="Password: "
+                value={passWord}
+                onChange={(event) => { setPassword(event.target.value) }}
+                style={styles.input}
+            />
 
-      <Button mode="contained" onPress={sendData}>
-        Log In
-      </Button>
+            <Button 
+                mode="contained" 
+                onPress={sendData}
+                style={styles.button}
+                labelStyle={styles.buttonText}>
+                Sign Up
+            </Button>
+        </View>
+
+    </View>
     </>
   );
 };
