@@ -1,21 +1,30 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
+import { Button, Menu } from 'react-native-paper';
 
-function BasicButtonExample() {
-    return (
-        <View style={styles.buttonContainer}>
-            <Button title="Placeholder Dropdown" onPress={() => {}} />
-        </View>
-    );
-}
+const lessons = [
+  { title: "Introduction" },
+  {
+    title: "Being Unique",
+    steps: 3,
+    contents: ["Story", "All About Me Autobiography", "Journal"]
+  },
+  {
+    title: "Being a Good Friend",
+    steps: 3,
+    contents: ["Story", "Good Friends and Bad Friends", "Journal"]
+  },
+];
 
-// Intro is first video
-function Overview () {
-    return (
-      // im trying to add a differen name to a button
-      <BasicButtonExample title="Introductions"/>
-    );
+function LessonBox({ title, steps, contents }) {
+  return (
+    <View style={styles.lessonBox}>
+      <Text style={styles.lessonTitle}>{title}</Text>
+      {steps && <Text style={styles.lessonSteps}>{steps} steps</Text>}
+      {contents && contents.map(content => <Text key={content} style={styles.lessonContent}>{content}</Text>)}
+    </View>
+  );
 }
 
 function About() {
@@ -36,12 +45,16 @@ export default function EducationScreen() {
       <View style={styles.content}> 
         <Text style={styles.appTitle}>Education Screen</Text>
         <Text style={styles.title}>Empower</Text>
+        <Text style={styles.header}>...Going to add a video</Text>
         
-        <Text style={styles.header}>About</Text>
+        <Text style={styles.title}>About</Text>
         <About />
         
         <Text style={styles.title}>Lesson's Overview</Text>
-        <Overview />
+        <View style={styles.container}>
+        <Text style={styles.heading}>Overview</Text>
+        {lessons.map(lesson => <LessonBox key={lesson.title} {...lesson} />)}
+        </View>
 
         <StatusBar style="auto" />
       </View>
@@ -72,16 +85,16 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 20,
   },
-  header: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: "#281b52",
-    marginBottom: 10,
+  heading: {
+    fontSize: 28, // Increase the heading font size
+    fontWeight: 'bold',
+    marginBottom: 16, // Increase the margin
+    color: '#333', // Change the heading color
   },
   paragraph: {
-    fontSize: 18,
-    marginBottom: 10,
-    lineHeight: 28,
+    fontSize: 18, // Increase the paragraph font size
+    marginBottom: 12,
+    color: '#555', // Change the paragraph color
   },
   aboutContainer: {
     marginVertical: 20,
@@ -89,5 +102,28 @@ const styles = StyleSheet.create({
   buttonContainer: {
     marginVertical: 20,
   },
+  lessonBox: {
+    padding: 15,
+    backgroundColor: '#d496a7',
+    marginVertical: 10,
+    borderRadius: 10,
+  },
+  lessonTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#333',
+  },
+  lessonSteps: {
+    fontSize: 18,
+    marginVertical: 10,
+    color: '#5d576b',
+  },
+  lessonContent: {
+    fontSize: 16,
+    marginBottom: 5,
+    color: '#5d576b',
+  },
 });
+
+
 
