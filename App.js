@@ -40,7 +40,7 @@ function App() {
 export default function AppWrapped() {
   return (
     <PaperProvider>
-      <App />
+      <Landing />
     </PaperProvider>
   );
 }

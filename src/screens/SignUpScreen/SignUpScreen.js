@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, Image, ScrollView } from 'react-native';
 import { Appbar, PaperProvider, Button } from 'react-native-paper';
 import { initFirebaseApp, getFirebaseStore, signUp } from '../../utils/firebase'
 
@@ -8,9 +8,9 @@ const Signup = ({navigation}) => {
   const [passWord, setPassword] = useState("");
 
   const sendData = async () => {
-    const user = await signUp(email, password)
-    if (user) {
-      naviation.navigate("Community")
+    const res = await signUp(userName, passWord)
+    if (res && res.email) {
+      navigation.navigate("Community")
     }
     else {
       console.log("Invalid Email / Password")
@@ -19,7 +19,7 @@ const Signup = ({navigation}) => {
 
   return (
     <>
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
 
         <Text style={styles.header}>Sign Up</Text>
 
@@ -60,7 +60,7 @@ const Signup = ({navigation}) => {
             </Button>
         </View>
 
-    </View>
+    </ScrollView>
     </>
   );
 };
