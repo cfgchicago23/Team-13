@@ -3,7 +3,7 @@ import { ImageBackground } from 'react-native';
 import { IconButton, MD3Colors } from 'react-native-paper'
 import {
   StyleSheet,
-  SafeAreaView,
+  ScrollView,
   View,
   Image,
   Text,
@@ -12,7 +12,7 @@ import {
 
 export default function Example({ navigation }) {
   return (
-    <SafeAreaView style={styles.container}>
+    <ScrollView style={styles.container}>
       <View style={styles.hero}>
         <Image
           source={require('./empower.png')}
@@ -59,7 +59,7 @@ export default function Example({ navigation }) {
           </View>
         </TouchableOpacity>
       </View>
-    </SafeAreaView>
+    </ScrollView>
   );
 }
 
