@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native';
 import { Appbar, PaperProvider, Button } from 'react-native-paper';
 import { initFirebaseApp, getFirebaseStore, signIn } from '../../utils/firebase'
 
@@ -16,9 +16,7 @@ const Login = ({naviation}) => {
         else {
             console.log("Invalid User / Password")
         }
-
     }
-
 
     return (
         //<>
@@ -38,7 +36,7 @@ const Login = ({naviation}) => {
                     <TextInput
                     label="Email: "
                     value={email}
-                    onChange={(event)=>{setUserName(event.target.value)}}
+                    onChange={(event)=>{setEmail(event.target.value)}}
                     style={styles.input}
                     />
 
@@ -54,8 +52,7 @@ const Login = ({naviation}) => {
                         mode="contained" 
                         onPress={sendData}
                         style={styles.button}
-                        labelStyle={styles.buttonText}
-                    >
+                        labelStyle={styles.buttonText}>
                         Log In
                     </Button>
                 </View>
