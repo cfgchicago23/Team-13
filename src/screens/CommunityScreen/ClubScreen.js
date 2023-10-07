@@ -1,18 +1,13 @@
-import { Modal, Portal, Text, Button, PaperProvider } from 'react-native-paper';
+import { Modal, Portal, Button, PaperProvider, Card, FAB } from 'react-native-paper';
 import { useEffect, useState, React } from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet, View, Text  } from "react-native";
 import { collection, getDocs } from "firebase/firestore"
 import { getFirebaseStore } from "../../utils/firebase";
 import { useRoute } from '@react-navigation/native';
 
 export default function Club({ route }) {
-  const club = route.params.club;
-  const name = club.name;
-  const location = club.country;
-  const [searchQuery, setSearchQuery] = useState('');
-  const [clubs, setClubs] = useState([]);
 
-  const number = club.membercount
+  const club = route.params.club;
   // const [visible, setVisible] = useState(false);
 
   // const showModal = () => setVisible(true);
@@ -21,15 +16,16 @@ export default function Club({ route }) {
 
 
   return (
-    <>
-      <PaperProvider>
-        <Text>{club.name}</Text>
-        <Text>{club.country}</Text>
-        <Text>{club.membercount}</Text>
-
-      </PaperProvider>
-
-    </>
+    <View>
+      <Text>{`Name: ${club.name}`}</Text>
+      <Text>{`Location: ${club.region}, ${club.country}`}</Text>
+      <Text>{`Member Count: ${club.memberCount}`}</Text>
+      <FAB
+        icon="plus"
+        label='Join'
+        onPress={() => console.log('Pressed')}
+      />
+    </View>
   );
 }
 
