@@ -1,14 +1,28 @@
 
+import { PaperProvider, Text, TextInput} from 'react-native-paper';
+
 export const AuthPage = () => {
-    const _goBack = () => console.log('Went back');
-    
-    const _handleSearch = () => console.log('Searching');
-    
-    const _handleMore = () => console.log('Shown more');
-    
+    const [userName, setUserName] = useState()
+    const [password, setPassword] = useState()
+
     return (
-    <Button icon="camera" mode="contained" onPress={() => console.log('Pressed')}>
-        Press me
-    </Button>
-    )
+    <>
+        <Text>
+            this is a test
+        </Text>
+
+        <TextInput
+          label="Username: "
+          value={"Username"}
+          onChangeText={text => setUserName(userName)}
+        />
+
+        <TextInput
+          label="Password: "
+          value={"Password"}
+          onChangeText={text => setPassword(password)}
+        />
+
+      </>
+    );
 };
