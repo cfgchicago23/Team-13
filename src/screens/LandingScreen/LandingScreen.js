@@ -23,7 +23,7 @@ import {
   ScrollView,
 } from 'react-native';
 
-export default function Example() {
+export default function Example({ navigation }) {
   return (
     <ScrollView>
       <SafeAreaView style={styles.container}>
@@ -46,7 +46,7 @@ export default function Example() {
 
           <TouchableOpacity
             onPress={() => {
-              // handle onPress
+              navigation.navigate("Login")
             }}>
             <View style={styles.button}>
               <Text style={styles.buttonText}>Sign In</Text>
@@ -54,7 +54,7 @@ export default function Example() {
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => {
-              // handle onPress
+              navigation.navigate("Signup")
             }}>
             <View style={styles.button}>
               <Text style={styles.buttonText}>Sign Up</Text>
