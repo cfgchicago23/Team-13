@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactPlayer from 'react-player'
 import { StatusBar } from 'expo-status-bar';
 
 import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
@@ -149,7 +150,7 @@ export default function EducationScreen() {
         <Text style={styles.appTitle}>Education Screen</Text>
         <Text style={styles.title}>Empower</Text>
 
-        <Text style={styles.header}>...Going to add a video</Text>
+        <ReactPlayer url='https://youtu.be/_v4TPH8Wlcw' />
 
         <Text style={styles.title}>About</Text>
         <About />
