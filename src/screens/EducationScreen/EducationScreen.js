@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
+
 import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
 import { Button, Menu } from 'react-native-paper';
 
@@ -45,6 +46,7 @@ export default function EducationScreen() {
       <View style={styles.content}> 
         <Text style={styles.appTitle}>Education Screen</Text>
         <Text style={styles.title}>Empower</Text>
+
         <Text style={styles.header}>...Going to add a video</Text>
         
         <Text style={styles.title}>About</Text>
@@ -85,6 +87,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 20,
   },
+
   heading: {
     fontSize: 28, // Increase the heading font size
     fontWeight: 'bold',
@@ -124,6 +127,3 @@ const styles = StyleSheet.create({
     color: '#5d576b',
   },
 });
-
-
-

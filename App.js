@@ -1,26 +1,36 @@
 import { StatusBar } from 'expo-status-bar';
+import React, { useState } from 'react';
 import { PaperProvider } from 'react-native-paper';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Landing from "./src/screens/LandingScreen/LandingScreen";
+import Education from './src/screens/EducationScreen/EducationScreen';
+import Community from "./src/screens/CommunityScreen/CommunityScreen"
+import Authenticate from "./src/screens/LoginScreen/LoginScreen"
+
 import { initFirebaseApp } from './src/utils/firebase';
 
+const app = initFirebaseApp()
+const Stack = createNativeStackNavigator()
 
 
-export default function App() {
+function App() {
   return (
-    <PaperProvider>
-      <Text variant="displayLarge">Display Large</Text> 
-    </PaperProvider>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Landing" component={ Landing } />
+        <Stack.Screen name="Education" component={ Education } />
+        <Stack.Screen name="Community" component={ Community } />
+        <Stack.Screen name="Authenticate" component={ Authenticate } /> 
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
-
+export function AppWrapped() {
+  return (
+    <PaperProvider>
+      <App />
+    </PaperProvider>
+  );
+}
