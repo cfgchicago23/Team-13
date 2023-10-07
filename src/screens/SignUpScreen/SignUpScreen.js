@@ -22,7 +22,7 @@ const Signup = ({navigation}) => {
   return (
     <>
 
-<   PaperAppbar.Header>
+    <PaperAppbar.Header>
         <PaperAppbar.BackAction onPress={() => {}} />
         <PaperAppbar.Content 
             titleStyle={styles.headerTitle}
@@ -113,7 +113,7 @@ const styles = {
     },
     input: {
         marginBottom: 15,
-        backgroundColor: '#f2d3e1',
+        backgroundColor: '#f2dae5',
         paddingHorizontal: 12,
         paddingVertical: 10,
         borderRadius: 8,
