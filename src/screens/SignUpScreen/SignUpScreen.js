@@ -3,6 +3,8 @@ import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native';
 import { Appbar, PaperProvider, Button } from 'react-native-paper';
 import { initFirebaseApp, getFirebaseStore, signUp } from '../../utils/firebase'
 
+import { Appbar as PaperAppbar } from 'react-native-paper';
+
 const Signup = ({navigation}) => {
   const [userName, setUserName] = useState("");
   const [passWord, setPassword] = useState("");
@@ -19,9 +21,16 @@ const Signup = ({navigation}) => {
 
   return (
     <>
-    <View style={styles.container}>
 
-        <Text style={styles.header}>Sign Up</Text>
+<   PaperAppbar.Header>
+        <PaperAppbar.BackAction onPress={() => {}} />
+        <PaperAppbar.Content 
+            titleStyle={styles.headerTitle}
+            title="Sign Up" 
+        />
+    </PaperAppbar.Header>
+
+    <View style={styles.container}>
 
         <View style={styles.hero}>
             <Image
@@ -71,6 +80,12 @@ const styles = {
         backgroundColor: '#d496a7',
         paddingHorizontal: 20,
         paddingVertical: 50,
+    },
+    headerTitle: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        textAlign: 'center',
+       marginLeft: -30,
     },
     header: {
         fontSize: 24,
