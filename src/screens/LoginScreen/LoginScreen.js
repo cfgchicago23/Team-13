@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native';
 import { Appbar, PaperProvider, Button } from 'react-native-paper';
 import { initFirebaseApp, getFirebaseStore, signIn } from '../../utils/firebase'
 
@@ -23,6 +23,7 @@ const Login = ({naviation}) => {
     return (
         //<>
         <View style={styles.container}>
+            <Text style={styles.header}>Log In</Text>
 
             <View style={styles.hero}>
                 <Image
@@ -31,9 +32,11 @@ const Login = ({naviation}) => {
                     resizeMode="contain"
                 />
             </View>
+            <View style={styles.space}></View>
 
             <View style={styles.content}>
                 <View style={styles.hero}>
+                    
                     <Text style={styles.label}>Email :</Text>
                     <TextInput
                     label="Email: "
@@ -72,10 +75,19 @@ const styles = {
         paddingHorizontal: 20,
         paddingVertical: 50,
     },
+    header: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        marginBottom: 20,
+    },
     hero: {
         backgroundColor: 'white',
         borderRadius: 16,
         padding: 16,
+    },
+    space: {
+        height: 40,
     },
     heroImage: {
         width: '100%',
