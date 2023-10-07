@@ -1,29 +1,9 @@
-// import * as React from 'react';
-// import { Avatar, Button, Card, Text } from 'react-native-paper';
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View } from 'react-native';
 
-// const LeftContent = props => <Avatar.Icon {...props} icon="folder" />
-
-// const LandingScreen = () => (
-//   <Card>
-//     <Card.Cover source={require('./globalfamily-logo.jpeg')} />
-//     <Card theme={{ colors: { primary: 'green' } }} />
-//   </Card>
-
-// );
-
-// export default LandingScreen;
-import React from 'react';
-import {
-  StyleSheet,
-  SafeAreaView,
-  View,
-  Image,
-  Text,
-  TouchableOpacity,
-} from 'react-native';
-
-export default function Example() {
+export default function LandingScreen({ navigation }) {
   return (
+
     <SafeAreaView style={styles.container}>
       <View style={styles.hero}>
         <Image
@@ -46,11 +26,6 @@ export default function Example() {
           onPress={() => {
             // handle onPress
           }}>
-         
-         
-        
-
-
           <View style={styles.button}>
             <Text style={styles.buttonText}>Sign Up</Text>
           </View>
@@ -65,62 +40,23 @@ export default function Example() {
           </View>
           </TouchableOpacity>
       </View>
+
+      <View style={styles.container}>
+      <Button title='nice' onPress={() => {
+        navigation.navigate("Education")
+      }} />
+      <StatusBar style="auto" />
+    </View>
     </SafeAreaView>
+
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
-  hero: {
-    backgroundColor: '#d496a7',
-    marginTop: 45,
-    marginRight: 20,
-    marginLeft: 20,
-    borderRadius: 16,
-    padding: 16,
-  },
-  heroImage: {
-    width: '100%',
-    height: 400,
-  },
-  content: {
-    flex: 1,
-    justifyContent: 'space-between',
-    paddingVertical: 24,
-    paddingHorizontal: 24,
-  },
-  contentHeader: {
-    paddingHorizontal: 24,
-  },
-  title: {
-    fontSize: 28,
-    fontWeight: '500',
-    color: '#281b52',
-    textAlign: 'center',
-    marginBottom: 12,
-    lineHeight: 40,
-  },
-  text: {
-    fontSize: 15,
-    lineHeight: 24,
-    fontWeight: '400',
-    color: '#9992a7',
-    textAlign: 'center',
-  },
-  button: {
-    backgroundColor: '#d496a7',
-    paddingVertical: 12,
-    paddingHorizontal: 14,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 12,
-    marginTop: 25
-  },
-  buttonText: {
-    fontSize: 15,
-    fontWeight: '500',
-    color: '#fff',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
