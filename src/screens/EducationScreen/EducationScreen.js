@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 
 import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
-import { Button, Menu } from 'react-native-paper';
+import { List } from 'react-native-paper';
 
 const lessons = [
   { title: "Introduction" },
@@ -14,17 +14,24 @@ const lessons = [
   {
     title: "Being a Good Friend",
     steps: 3,
+    contents: ["Story", "Maintaining a Balanced Diet", "Tips for Planning Meals", "Grow Your Own Garden", "Journal"]
+  },
+  {
+    title: "Making Healthy Choices",
+    steps: 5,
     contents: ["Story", "Good Friends and Bad Friends", "Journal"]
   },
 ];
 
-function LessonBox({ title, steps, contents }) {
+function LessonAccordion({ title, steps, contents }) {
   return (
-    <View style={styles.lessonBox}>
-      <Text style={styles.lessonTitle}>{title}</Text>
-      {steps && <Text style={styles.lessonSteps}>{steps} steps</Text>}
-      {contents && contents.map(content => <Text key={content} style={styles.lessonContent}>{content}</Text>)}
-    </View>
+    <List.Accordion
+      title={`${title}${steps ? ` - ${steps} steps` : ''}`}
+      left={props => <List.Icon {...props} icon="folder" />}>
+      {contents && contents.map(content => (
+        <List.Item key={content} title={content} />
+      ))}
+    </List.Accordion>
   );
 }
 
@@ -43,20 +50,21 @@ function About() {
 export default function EducationScreen() {
   return (
     <SafeAreaView style={styles.safeArea}>
-      <View style={styles.content}> 
+      <View style={styles.content}>
         <Text style={styles.appTitle}>Education Screen</Text>
         <Text style={styles.title}>Empower</Text>
 
         <Text style={styles.header}>...Going to add a video</Text>
-        
+
         <Text style={styles.title}>About</Text>
         <About />
-        
+
         <Text style={styles.title}>Lesson's Overview</Text>
-        <View style={styles.container}>
-        <Text style={styles.heading}>Overview</Text>
-        {lessons.map(lesson => <LessonBox key={lesson.title} {...lesson} />)}
-        </View>
+        <List.Section>
+          {lessons.map(lesson => (
+            <LessonAccordion key={lesson.title} {...lesson} />
+          ))}
+        </List.Section>
 
         <StatusBar style="auto" />
       </View>
@@ -87,43 +95,18 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 20,
   },
-
   heading: {
-    fontSize: 28, // Increase the heading font size
+    fontSize: 28,
     fontWeight: 'bold',
-    marginBottom: 16, // Increase the margin
-    color: '#333', // Change the heading color
+    marginBottom: 16,
+    color: '#333',
   },
   paragraph: {
-    fontSize: 18, // Increase the paragraph font size
+    fontSize: 18,
     marginBottom: 12,
-    color: '#555', // Change the paragraph color
+    color: '#555',
   },
   aboutContainer: {
     marginVertical: 20,
-  },
-  buttonContainer: {
-    marginVertical: 20,
-  },
-  lessonBox: {
-    padding: 15,
-    backgroundColor: '#d496a7',
-    marginVertical: 10,
-    borderRadius: 10,
-  },
-  lessonTitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: '#333',
-  },
-  lessonSteps: {
-    fontSize: 18,
-    marginVertical: 10,
-    color: '#5d576b',
-  },
-  lessonContent: {
-    fontSize: 16,
-    marginBottom: 5,
-    color: '#5d576b',
   },
 });
