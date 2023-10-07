@@ -46,7 +46,7 @@ export default function Example({ navigation }) {
             navigation.navigate("Auth")
           }}>
           <View style={styles.button}>
-            <Text style={styles.buttonText}>Participant/ Club Leader</Text>
+            <Text style={styles.buttonText}>Participant/Club Leader</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
   },
   heroImage: {
     width: '100%',
-    height: 400,
+    height: 300,
   },
   content: {
     flex: 1,
