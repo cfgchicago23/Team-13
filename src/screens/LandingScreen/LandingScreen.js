@@ -1,9 +1,33 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+// import * as React from 'react';
+// import { Avatar, Button, Card, Text } from 'react-native-paper';
 
-export default function LandingScreen({ navigation }) {
+// const LeftContent = props => <Avatar.Icon {...props} icon="folder" />
+
+// const LandingScreen = () => (
+//   <Card>
+//     <Card.Cover source={require('./globalfamily-logo.jpeg')} />
+//     <Card theme={{ colors: { primary: 'green' } }} />
+//   </Card>
+
+// );
+
+// export default LandingScreen;
+import React from 'react';
+import {
+  StyleSheet,
+  SafeAreaView,
+  View,
+  Image,
+  Text,
+  TouchableOpacity,
+} from 'react-native';
+
+export default function Example() {
   return (
+<<<<<<< HEAD
 
+=======
+>>>>>>> c15f0ca736d0295b7996f07fd77330592f68ad2b
     <SafeAreaView style={styles.container}>
       <View style={styles.hero}>
         <Image
@@ -27,6 +51,7 @@ export default function LandingScreen({ navigation }) {
             // handle onPress
           }}>
           <View style={styles.button}>
+
             <Text style={styles.buttonText}>Sign Up</Text>
           </View>
         </TouchableOpacity>
@@ -48,15 +73,61 @@ export default function LandingScreen({ navigation }) {
       <StatusBar style="auto" />
     </View>
     </SafeAreaView>
-
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+  },
+  hero: {
+    backgroundColor: '#d496a7',
+    marginTop: 45,
+    marginRight: 20,
+    marginLeft: 20,
+    borderRadius: 16,
+    padding: 16,
+  },
+  heroImage: {
+    width: '100%',
+    height: 400,
+  },
+  content: {
+    flex: 1,
+    justifyContent: 'space-between',
+    paddingVertical: 24,
+    paddingHorizontal: 24,
+  },
+  contentHeader: {
+    paddingHorizontal: 24,
+  },
+  title: {
+    fontSize: 28,
+    fontWeight: '500',
+    color: '#281b52',
+    textAlign: 'center',
+    marginBottom: 12,
+    lineHeight: 40,
+  },
+  text: {
+    fontSize: 15,
+    lineHeight: 24,
+    fontWeight: '400',
+    color: '#9992a7',
+    textAlign: 'center',
+  },
+  button: {
+    backgroundColor: '#d496a7',
+    paddingVertical: 12,
+    paddingHorizontal: 14,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 12,
+    marginTop: 25
+  },
+  buttonText: {
+    fontSize: 15,
+    fontWeight: '500',
+    color: '#fff',
   },
 });
