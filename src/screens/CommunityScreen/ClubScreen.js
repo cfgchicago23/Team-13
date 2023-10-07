@@ -6,22 +6,21 @@ import { getFirebaseStore } from "../../utils/firebase";
 import { useRoute } from '@react-navigation/native';  
 
 
-export default function Club() {
-  const route = useRoute();
-  const { club } = route.params;
+export default function Club({ route }) {
+  const club  = route.params.club;
+  const name = club.name;
+  const location = club.country;
   const [searchQuery, setSearchQuery] = useState('');
   const [clubs, setClubs] = useState([]);
 
+  const number = club.membercount
+
   return (
     <>
-      {/* Club name */}
-      <PaperAppbar.Header>
-        <PaperAppbar.BackAction onPress={() => {}} />
-        <PaperAppbar.Content 
-            title = {name}
-        />
-      </PaperAppbar.Header>
-      {/* Club location */}
+      
+      <Text> {name} </Text>
+      <Text> {location} </Text>
+      <Text> {number} </Text>
       {/* number of members */}
 
     </>
