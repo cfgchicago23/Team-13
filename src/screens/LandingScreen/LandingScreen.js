@@ -34,8 +34,11 @@ export default function Example() {
       </View>
       <View style={styles.content}>
         <View style={styles.contentHeader}>
-          <Text style={styles.title}>
-            Love{'\n'}Create  Share{' '}
+        <Text style={styles.title}>
+            Love{'\n'}Create     {' '}
+            <View style={styles.appName}>
+              <Text style={styles.appNameText}> Share</Text>
+            </View>
           </Text>
           <Text style={styles.text}>
           Empower is designed to teach you how to address the challenges and obstacles that you will face, especially as you grow older and take on more responsibility.
@@ -47,10 +50,16 @@ export default function Example() {
             // handle onPress
           }}>
           <View style={styles.button}>
-            <Text style={styles.buttonText}>Sign In</Text>
+            <Text style={styles.buttonText}>Student</Text>
           </View>
           <View style={styles.button}>
-            <Text style={styles.buttonText}>Sign Up</Text>
+            <Text style={styles.buttonText}>Participant</Text>
+          </View>
+          <View style={styles.button}>
+            <Text style={styles.buttonText}>Club Leader</Text>
+          </View>
+          <View style={styles.button}>
+            <Text style={styles.buttonText}>Help</Text>
           </View>
         </TouchableOpacity>
       </View>
@@ -64,7 +73,7 @@ const styles = StyleSheet.create({
   },
   hero: {
     backgroundColor: '#d496a7',
-    marginTop: 45,
+    marginTop: 50,
     marginRight: 20,
     marginLeft: 20,
     borderRadius: 16,
@@ -90,22 +99,32 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 12,
     lineHeight: 40,
-  },
-  text: {
+  }, appName: {
+    backgroundColor: '#d496a7',
+    transform: [
+      {
+        rotate: '-5deg',
+      },
+    ],
+    paddingHorizontal: 6,
+  },appNameText: {
+    fontSize: 28,
+    fontWeight: '700',
+    color: '#281b52',
+  }, text: {
     fontSize: 15,
     lineHeight: 24,
     fontWeight: '400',
     color: '#9992a7',
     textAlign: 'center',
-  },
-  button: {
+  },button: {
     backgroundColor: '#d496a7',
     paddingVertical: 12,
     paddingHorizontal: 14,
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 12,
-    marginTop: 25
+    marginTop: 5
   },
   buttonText: {
     fontSize: 15,
