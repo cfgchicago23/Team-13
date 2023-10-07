@@ -13,6 +13,8 @@
 
 // export default LandingScreen;
 import React from 'react';
+import { ImageBackground } from 'react-native';
+import { IconButton, MD3Colors } from 'react-native-paper'
 import {
   StyleSheet,
   SafeAreaView,
@@ -22,7 +24,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-export default function Example() {
+export default function Example({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.hero}>
@@ -35,7 +37,7 @@ export default function Example() {
       <View style={styles.content}>
         <View style={styles.contentHeader}>
         <Text style={styles.title}>
-            Love{'\n'}Create     {' '}
+            Love{'\n'}Create {' '}
             <View style={styles.appName}>
               <Text style={styles.appNameText}> Share</Text>
             </View>
@@ -52,14 +54,22 @@ export default function Example() {
           <View style={styles.button}>
             <Text style={styles.buttonText}>Student</Text>
           </View>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            // handle onPress
+          }}>
           <View style={styles.button}>
-            <Text style={styles.buttonText}>Participant</Text>
+            <Text style={styles.buttonText}>Participant/ Club Leader</Text>
           </View>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            // handle onPress
+          }}>
           <View style={styles.button}>
-            <Text style={styles.buttonText}>Club Leader</Text>
-          </View>
-          <View style={styles.button}>
-            <Text style={styles.buttonText}>Help</Text>
+            <Text style={styles.buttonText}>Get Help
+      </Text>
           </View>
         </TouchableOpacity>
       </View>
@@ -70,6 +80,9 @@ export default function Example() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  icon: {
+
   },
   hero: {
     backgroundColor: '#d496a7',
@@ -124,7 +137,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 12,
-    marginTop: 5
+    marginTop: 15
   },
   buttonText: {
     fontSize: 15,
@@ -132,3 +145,4 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
 });
+
