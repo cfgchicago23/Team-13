@@ -123,18 +123,20 @@ function LessonAccordion({ title, steps, contents }) {
   return (
     <List.Accordion
       title={`${title}${steps ? ` - ${steps} steps` : ''}`}
-      left={(props) => <List.Icon {...props} icon="folder" />}
-      style={styles.accordionItem}
+      left={(props) => <List.Icon {...props} icon="plus" color="black"/>}
+      style={{ backgroundColor: '#FFDDDD' }}
+      titleStyle={{ color: 'black', fontWeight: 'bold'}} 
     >
       {contents &&
         contents.map((content) => (
           <List.Item
             key={content}
             title={content}
-            titleStyle={styles.contentText} 
+            titleStyle={{ color: 'black' }}
           />
         ))}
     </List.Accordion>
+
   );
 }
 
@@ -166,7 +168,7 @@ export default function EducationScreen() {
         <Text style={styles.title}>About</Text>
         <About />
 
-        <Text style={styles.title}>Lesson's Overview</Text>
+        <Text style={styles.title}>Overview</Text>
         <List.Section>
           {lessons.map(lesson => (
             <LessonAccordion key={lesson.title} {...lesson} />
@@ -190,7 +192,7 @@ const styles = StyleSheet.create({
   appTitle: {
     fontSize: 36,
     fontWeight: 'bold',
-    color: '#d496a7',
+    color: '#b77a72',
     textAlign: 'center',
     marginVertical: 16,
   },
@@ -198,7 +200,7 @@ const styles = StyleSheet.create({
     fontSize: 28,
     lineHeight: 40,
     fontWeight: 'bold',
-    color: '#d496a7',
+    color: '#281b52',
     textAlign: 'center',
     marginBottom: 20,
   },
