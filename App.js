@@ -1,4 +1,5 @@
-import { StatusBar } from 'expo-status-bar';
+import HelpScreen from "./src/screens/HelpScreen/HelpScreen";
+// import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { PaperProvider } from 'react-native-paper';
 import { StyleSheet, View } from 'react-native';
