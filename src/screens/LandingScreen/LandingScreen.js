@@ -3,7 +3,7 @@ import { ImageBackground } from 'react-native';
 import { IconButton, MD3Colors } from 'react-native-paper'
 import {
   StyleSheet,
-  SafeAreaView,
+  ScrollView,
   View,
   Image,
   Text,
@@ -28,7 +28,7 @@ export default function Example({ navigation }) {
   ];
 
   return (
-    <SafeAreaView style={styles.container}>
+    <ScrollView style={styles.container}>
   
 
       <View style={styles.menuIconContainer}>
@@ -109,7 +109,7 @@ export default function Example({ navigation }) {
           </View>
         </TouchableOpacity>
       </View>
-    </SafeAreaView>
+    </ScrollView>
   );
 }
 
