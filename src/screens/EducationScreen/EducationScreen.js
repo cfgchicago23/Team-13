@@ -1,9 +1,12 @@
 import React from 'react';
 import ReactPlayer from 'react-player'
 import { StatusBar } from 'expo-status-bar';
+//import YouTube from 'react-native-youtube';
 
 import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
 import { List } from 'react-native-paper';
+import { WebView } from 'react-native-webview';
+//import Video from 'react-native-video'; 
 
 const lessons = [
   { title: "Introduction" },
@@ -160,11 +163,12 @@ export default function EducationScreen() {
       <View style={styles.content}>
         <Text style={styles.appTitle}>Empower</Text>
         <Text style={styles.title}>82 Steps</Text>
-
-        <View style={styles.videoContainer}>
-          <ReactPlayer url="https://youtu.be/_v4TPH8Wlcw" />
-        </View>  
-
+        <View style={styles.container}>
+        <WebView
+      source={{ uri: 'https://youtu.be/_v4TPH8Wlcw' }}
+      style={{ flex: 1 }}
+    />
+      </View>
         <Text style={styles.title}>About</Text>
         <About />
 
@@ -232,5 +236,9 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  video: {
+    width: 300,
+    height: 200,
   },
 });

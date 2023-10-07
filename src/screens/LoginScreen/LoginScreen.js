@@ -6,10 +6,11 @@ import { initFirebaseApp, getFirebaseStore, signIn } from '../../utils/firebase'
 
 const Login = ({ navigation }) => {
     const [email, setEmail] = useState("");
-    const [passWord, setPassword] = useState("");
+    const [password, setPassword] = useState("");
+    
 
     const sendData = async () => {
-        const user = await signIn(email, passWord)
+        const user = await signIn(email, password)
         if (user != null) {
             navigation.navigate("Community")
         }
@@ -21,8 +22,7 @@ const Login = ({ navigation }) => {
     return (
         //<>
         <View style={styles.container}>
-            <Text style={styles.header}>Log In</Text>
-
+            {/* <Text style={styles.header}>Log In</Text> */}
             <View style={styles.hero}>
                 <Image
                     source={require('./empower.png')}
@@ -31,28 +31,28 @@ const Login = ({ navigation }) => {
                 />
             </View>
             <View style={styles.space}></View>
-
+        
             <View style={styles.content}>
                 <View style={styles.hero}>
-                    
+
                     <Text style={styles.label}>Email :</Text>
                     <TextInput
-                    label="Email: "
-                    value={email}
-                    onChange={(event)=>{setEmail(event.target.value)}}
-                    style={styles.input}
+                        label="Email: "
+                        value={email}
+                        onChange={(event) => { setEmail(event.target.value) }}
+                        style={styles.input}
                     />
 
                     <Text style={styles.label}>Password :</Text>
                     <TextInput
-                    label="Password: "
-                    value={passWord}
-                    onChange={(event)=>{setPassword(event.target.value)}}
-                    style={styles.input}
+                        label="Password: "
+                        value={password}
+                        onChange={(event) => { setPassword(event.target.value) }}
+                        style={styles.input}
                     />
 
-                    <Button 
-                        mode="contained" 
+                    <Button
+                        mode="contained"
                         onPress={sendData}
                         style={styles.button}
                         labelStyle={styles.buttonText}>
@@ -76,12 +76,14 @@ const styles = {
         fontSize: 24,
         fontWeight: 'bold',
         textAlign: 'center',
-        marginBottom: 20,
+        marginTop: -30,
+        marginBottom: 20
     },
     hero: {
         backgroundColor: 'white',
         borderRadius: 16,
         padding: 16,
+        marginBottom: -70
     },
     space: {
         height: 40,
