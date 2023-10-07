@@ -1,4 +1,4 @@
-import HelpScreen from "./src/screens/HelpScreen/HelpScreen";
+import HelpScreen from "./src/screens/HelpScreen/GetHelp";
 import React, { useState } from "react";
 import { PaperProvider } from "react-native-paper";
 import { StyleSheet, View } from "react-native";
@@ -11,6 +11,7 @@ import Community from "./src/screens/CommunityScreen/CommunityScreen";
 import { initFirebaseApp } from "./src/utils/firebase";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import GetHelp from "./src/screens/HelpScreen/GetHelp";
 
 const app = initFirebaseApp();
 const Stack = createNativeStackNavigator();
@@ -34,7 +35,7 @@ function App() {
 export default function AppWrapped() {
   return (
     <PaperProvider>
-      <GetHelp />
+      <App />
     </PaperProvider>
   );
 }

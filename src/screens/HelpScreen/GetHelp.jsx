@@ -12,21 +12,16 @@ import React, { useState } from "react";
 const logo = require("./Empower.png");
 
 export default function GetHelp() {
-  // Define state to track which questions are expanded
   const [expandedQuestions, setExpandedQuestions] = useState([]);
 
-  // Function to toggle question expansion
   const toggleQuestion = (index) => {
     if (expandedQuestions.includes(index)) {
-      // If question is already expanded, collapse it
       setExpandedQuestions(expandedQuestions.filter((item) => item !== index));
     } else {
-      // If question is collapsed, expand it
       setExpandedQuestions([...expandedQuestions, index]);
     }
   };
 
-  // FAQ data
   const faqData = [
     {
       question:
