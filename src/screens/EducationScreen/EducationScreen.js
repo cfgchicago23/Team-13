@@ -123,9 +123,9 @@ function LessonAccordion({ title, steps, contents }) {
   return (
     <List.Accordion
       title={`${title}${steps ? ` - ${steps} steps` : ''}`}
-      left={(props) => <List.Icon {...props} icon="plus" color="black" fontFamily= "georgia"/>}
+      left={(props) => <List.Icon {...props} icon="plus" color="black"/>}
       style={{ backgroundColor: '#FFDDDD' }}
-      titleStyle={{ color: 'black', fontWeight: 'bold', fontFamily: "georgia"}} 
+      titleStyle={{ color: 'black', fontWeight: 'bold'}} 
     >
       {contents &&
         contents.map((content) => (
@@ -201,14 +201,12 @@ const styles = StyleSheet.create({
     fontSize: 28,
     lineHeight: 40,
     fontWeight: 'bold',
-    fontFamily: 'cursive',
     color: '#281b52',
     textAlign: 'center',
     marginBottom: 20,
   },
   paragraph: {
     fontSize: 18,
-    fontFamily: "georgia",
     marginBottom: 12,
     color: '#555',
   },
@@ -218,7 +216,6 @@ const styles = StyleSheet.create({
   },
   contentText: {
     color: 'black',
-    fontFamily: "georgia",
   },
   videoContainer: {
     flex: 1,
