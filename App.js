@@ -5,8 +5,6 @@ import Landing from "./src/screens/LandingScreen/LandingScreen";
 import { initFirebaseApp } from './src/utils/firebase';
 import { AuthPage } from './src/screens/LoginScreen/LoginScreen';
 
-initFirebaseApp()
-
 function App() {
   return (
     <AuthPage />
