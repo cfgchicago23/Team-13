@@ -1,14 +1,15 @@
 import HelpScreen from "./src/screens/HelpScreen/HelpScreen";
-// import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { PaperProvider } from 'react-native-paper';
 import { StyleSheet, View } from 'react-native';
 import Landing from "./src/screens/LandingScreen/LandingScreen";
 import Education from './src/screens/EducationScreen/EducationScreen';
+import AuthPage from './src/screens/LoginScreen/LoginScreen';
+import Community from "./src/screens/CommunityScreen/CommunityScreen";
 import { initFirebaseApp } from './src/utils/firebase';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { AuthPage } from './src/screens/LoginScreen/LoginScreen';
+
 const app = initFirebaseApp()
 const Stack = createNativeStackNavigator()
 
@@ -19,6 +20,9 @@ function App() {
       <Stack.Navigator>
         <Stack.Screen name="Landing" component={ Landing } />
         <Stack.Screen name="Education" component={ Education } />
+        <Stack.Screen name="Help" component={ HelpScreen} />
+        <Stack.Screen name="Auth" component={ AuthPage } />
+        <Stack.Screen name="Community" component={ Community } />
       </Stack.Navigator>
     </NavigationContainer>
   );
