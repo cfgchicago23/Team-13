@@ -1,8 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
+import ReactPlayer from 'react-player'
 import { StatusBar } from 'expo-status-bar';
 
 import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
-import { Button, Menu } from 'react-native-paper';
+import { List } from 'react-native-paper';
 
 const lessons = [
   { title: "Introduction" },
@@ -16,17 +17,127 @@ const lessons = [
     steps: 3,
     contents: ["Story", "Good Friends and Bad Friends", "Journal"]
   },
+  {
+    title: "Making Healthy Choices",
+    steps: 5,
+    contents: ["Story", "Maintaining a Balanced Diet", "Tips for Planning Meals", "Grow Your Own Garden", "Journal"]
+  },
+  {
+    title: "What Makes You Happy?",
+    steps: 3,
+    contents: ["Story", "Reflection Questions", "Journal"]
+  },
+  {
+    title: "Self-Image",
+    steps: 4,
+    contents: ["Story", "Reflection Questions", "Dove Evolution Campaign", "Journal"]
+  },
+  {
+    title: "Choosing Good Friends",
+    steps: 4,
+    contents: ["Story", "Reflection Questions","Friendship Letters", "Journal"]
+  },
+  {
+    title: "Peer Pressure",
+    steps: 3,
+    contents: ["Story", "Reflection Questions", "Journal"]
+  },
+  {
+    title: "Thinking Positively",
+    steps: 5,
+    contents: ["Story", "Reflection Questions", "Practicing Gratitude", "Positively Me", "Journal"]
+  },
+  {
+    title: "Staying Optimistic",
+    steps: 4,
+    contents: ["Story", "Reflection Questions", "Thank You & Encouragement Cards","Journal"]
+  },
+  {
+    title: "Stress Less",
+    steps: 4,
+    contents: ["Story", "Reflection Questions", "Weekly Planners","Journal"]
+  },
+  {
+    title: "Influencing Well",
+    steps: 3,
+    contents: ["Story", "Reflection Questions", "Journal"]
+  },
+  {
+    title: "Facing Obstacles",
+    steps: 3,
+    contents: ["Story", "Reflection Questions", "Journal"]
+  },
+  {
+    title: "Speaking Out",
+    steps: 4,
+    contents: ["Story", "Reflection Questions","Nature Prints", "Journal"]
+  },
+  {
+    title: "Enduring Hardship",
+    steps: 3,
+    contents: ["Story", "Reflection Questions", "Journal"]
+  },
+  {
+    title: "Dealing with Change",
+    steps: 4,
+    contents: ["Story", "Reflection Questions", "Painting Emotions","Journal"]
+  },
+  {
+    title: "Discovering Potential?",
+    steps: 5,
+    contents: ["Story", "Reflection Questions", "I Love Being a Girl", "Footprints","Journal"]
+  },
+  {
+    title: "Relationships",
+    steps: 3,
+    contents: ["Story", "Reflection Questions", "Journal"]
+  },
+  {
+    title: "Staying Safe",
+    steps: 4,
+    contents: ["Story", "Chart","Reflection Questions", "Journal"]
+  },
+  {
+    title: "It's Ok to Say No",
+    steps: 3,
+    contents: ["Story", "Reflection Questions", "Journal"]
+  },
+  {
+    title: "Setting Goals",
+    steps: 3,
+    contents: ["Story", "Reflection Questions","Venn Diagrams", "Journal"]
+  },
+  {
+    title: "Learning How to Lead",
+    steps: 4,
+    contents: ["Story", "Reflection Questions", "Card Making","Journal"]
+  },
+  {
+    title: "Being a Role Model",
+    steps: 3,
+    contents: ["Story", "Reflection Questions", "Future Self-Portrait","Journal"]
+  },
 ];
 
-function LessonBox({ title, steps, contents }) {
+function LessonAccordion({ title, steps, contents }) {
   return (
-    <View style={styles.lessonBox}>
-      <Text style={styles.lessonTitle}>{title}</Text>
-      {steps && <Text style={styles.lessonSteps}>{steps} steps</Text>}
-      {contents && contents.map(content => <Text key={content} style={styles.lessonContent}>{content}</Text>)}
-    </View>
+    <List.Accordion
+      title={`${title}${steps ? ` - ${steps} steps` : ''}`}
+      left={(props) => <List.Icon {...props} icon="folder" />}
+      style={styles.accordionItem}
+    >
+      {contents &&
+        contents.map((content) => (
+          <List.Item
+            key={content}
+            title={content}
+            titleStyle={styles.contentText} 
+          />
+        ))}
+    </List.Accordion>
   );
 }
+
 
 function About() {
     return (
@@ -43,20 +154,24 @@ function About() {
 export default function EducationScreen() {
   return (
     <SafeAreaView style={styles.safeArea}>
-      <View style={styles.content}> 
+      <View style={styles.content}>
         <Text style={styles.appTitle}>Education Screen</Text>
         <Text style={styles.title}>Empower</Text>
+        <Text style={styles.title}>82 Steps</Text>
 
-        <Text style={styles.header}>...Going to add a video</Text>
-        
+        <View style={styles.videoContainer}>
+          <ReactPlayer url="https://youtu.be/_v4TPH8Wlcw" />
+        </View>
+
         <Text style={styles.title}>About</Text>
         <About />
-        
+
         <Text style={styles.title}>Lesson's Overview</Text>
-        <View style={styles.container}>
-        <Text style={styles.heading}>Overview</Text>
-        {lessons.map(lesson => <LessonBox key={lesson.title} {...lesson} />)}
-        </View>
+        <List.Section>
+          {lessons.map(lesson => (
+            <LessonAccordion key={lesson.title} {...lesson} />
+          ))}
+        </List.Section>
 
         <StatusBar style="auto" />
       </View>
@@ -75,55 +190,39 @@ const styles = StyleSheet.create({
   appTitle: {
     fontSize: 36,
     fontWeight: 'bold',
-    color: "#281b52",
+    color: '#d496a7',
     textAlign: 'center',
     marginVertical: 16,
   },
   title: {
     fontSize: 28,
     lineHeight: 40,
-    fontWeight: "500",
-    color: "#281b52",
+    fontWeight: 'bold',
+    color: '#d496a7',
     textAlign: 'center',
     marginBottom: 20,
   },
-
-  heading: {
-    fontSize: 28, // Increase the heading font size
-    fontWeight: 'bold',
-    marginBottom: 16, // Increase the margin
-    color: '#333', // Change the heading color
-  },
   paragraph: {
-    fontSize: 18, // Increase the paragraph font size
+    fontSize: 18,
     marginBottom: 12,
-    color: '#555', // Change the paragraph color
+    color: '#555',
   },
   aboutContainer: {
     marginVertical: 20,
+    color: '#d496a7',
   },
-  buttonContainer: {
+  contentText: {
+    color: 'black',
+  },
+  videoContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
     marginVertical: 20,
   },
-  lessonBox: {
-    padding: 15,
-    backgroundColor: '#d496a7',
-    marginVertical: 10,
-    borderRadius: 10,
-  },
-  lessonTitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: '#333',
-  },
-  lessonSteps: {
-    fontSize: 18,
-    marginVertical: 10,
-    color: '#5d576b',
-  },
-  lessonContent: {
-    fontSize: 16,
-    marginBottom: 5,
-    color: '#5d576b',
+  centeredText: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
