@@ -3,30 +3,25 @@ import { Appbar, PaperProvider, Text, TextInput, Button } from 'react-native-pap
 import { View } from 'react-native';
 import { initFirebaseApp, getFirebaseStore, signUp } from '../../utils/firebase'
 
-const Signup = () => {
+const Signup = ({naviation}) => {
   const [userName, setUserName] = useState("");
   const [passWord, setPassword] = useState("");
 
   const sendData = async () => {
-    const user = await signUp(email, passWord)
-    if (user != Null) {
-        naviation.navigate("Community")
-    }
-    else {
-        console.log("Invalid User / Password")
-    }
+    navigation.navigate("Community")
+    // const user = await signUp(email, passWord)
+    // if (user != Null) {
+    //   naviation.navigate("Community")
+    // }
+    // else {
+    //   console.log("Invalid User / Password")
+    // }
 
-}
+  }
 
 
   return (
     <>
-      <View>
-        <Appbar.Header>
-          <Appbar.Content title="Title" />
-        </Appbar.Header>
-      </View>
-
 
 
       <TextInput

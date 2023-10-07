@@ -16,9 +16,7 @@ const Login = ({naviation}) => {
         else {
             console.log("Invalid User / Password")
         }
-
     }
-
 
     return (
         //<>
@@ -41,7 +39,7 @@ const Login = ({naviation}) => {
                     <TextInput
                     label="Email: "
                     value={email}
-                    onChange={(event)=>{setUserName(event.target.value)}}
+                    onChange={(event)=>{setEmail(event.target.value)}}
                     style={styles.input}
                     />
 
@@ -57,8 +55,7 @@ const Login = ({naviation}) => {
                         mode="contained" 
                         onPress={sendData}
                         style={styles.button}
-                        labelStyle={styles.buttonText}
-                    >
+                        labelStyle={styles.buttonText}>
                         Log In
                     </Button>
                 </View>
