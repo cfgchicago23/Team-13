@@ -9,7 +9,7 @@ initFirebaseApp()
 export default function App() {
   return (
     <PaperProvider>
-      <Text variant="displayLarge">Display Large</Text> <App />
+        
     </PaperProvider>
   );
 }
