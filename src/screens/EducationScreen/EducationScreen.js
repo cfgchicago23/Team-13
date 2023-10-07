@@ -68,7 +68,7 @@ const lessons = [
     contents: ["Story", "Reflection Questions", "Journal"]
   },
   {
-    title: "Speaking out",
+    title: "Speaking Out",
     steps: 4,
     contents: ["Story", "Reflection Questions","Nature Prints", "Journal"]
   },
@@ -123,13 +123,21 @@ function LessonAccordion({ title, steps, contents }) {
   return (
     <List.Accordion
       title={`${title}${steps ? ` - ${steps} steps` : ''}`}
-      left={props => <List.Icon {...props} icon="folder" />}>
-      {contents && contents.map(content => (
-        <List.Item key={content} title={content} />
-      ))}
+      left={(props) => <List.Icon {...props} icon="folder" />}
+      style={styles.accordionItem}
+    >
+      {contents &&
+        contents.map((content) => (
+          <List.Item
+            key={content}
+            title={content}
+            titleStyle={styles.contentText} 
+          />
+        ))}
     </List.Accordion>
   );
 }
+
 
 function About() {
     return (
@@ -149,8 +157,11 @@ export default function EducationScreen() {
       <View style={styles.content}>
         <Text style={styles.appTitle}>Education Screen</Text>
         <Text style={styles.title}>Empower</Text>
+        <Text style={styles.title}>82 Steps</Text>
 
-        <ReactPlayer url='https://youtu.be/_v4TPH8Wlcw' />
+        <View style={styles.videoContainer}>
+          <ReactPlayer url="https://youtu.be/_v4TPH8Wlcw" />
+        </View>
 
         <Text style={styles.title}>About</Text>
         <About />
@@ -179,23 +190,17 @@ const styles = StyleSheet.create({
   appTitle: {
     fontSize: 36,
     fontWeight: 'bold',
-    color: "#281b52",
+    color: '#d496a7',
     textAlign: 'center',
     marginVertical: 16,
   },
   title: {
     fontSize: 28,
     lineHeight: 40,
-    fontWeight: "500",
-    color: "#281b52",
+    fontWeight: 'bold',
+    color: '#d496a7',
     textAlign: 'center',
     marginBottom: 20,
-  },
-  heading: {
-    fontSize: 28,
-    fontWeight: 'bold',
-    marginBottom: 16,
-    color: '#333',
   },
   paragraph: {
     fontSize: 18,
@@ -204,5 +209,20 @@ const styles = StyleSheet.create({
   },
   aboutContainer: {
     marginVertical: 20,
+    color: '#d496a7',
+  },
+  contentText: {
+    color: 'black',
+  },
+  videoContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginVertical: 20,
+  },
+  centeredText: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
