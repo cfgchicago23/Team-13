@@ -9,11 +9,8 @@ import {
   Text,
   TouchableOpacity,
 } from 'react-native';
-import { SocialIcon } from 'react-social-icons/component'
-import 'react-social-icons/twitter'; 
-import 'react-social-icons/facebook';
-import 'react-social-icons/linkedin';
-import 'react-social-icons/email';
+import { SocialIcon } from 'react-social-icons'
+
 
 export default function Example({ navigation }) {
   return (
