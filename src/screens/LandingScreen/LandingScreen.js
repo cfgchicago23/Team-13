@@ -1,6 +1,6 @@
-import React from 'react';
-import { ImageBackground } from 'react-native';
-import { IconButton, MD3Colors } from 'react-native-paper'
+import React from "react";
+import { ImageBackground } from "react-native";
+import { IconButton, MD3Colors } from "react-native-paper";
 import {
   StyleSheet,
   SafeAreaView,
@@ -8,14 +8,14 @@ import {
   Image,
   Text,
   TouchableOpacity,
-} from 'react-native';
+} from "react-native";
 
 export default function Example({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.hero}>
         <Image
-          source={require('./empower.png')}
+          source={require("./empower.png")}
           style={styles.heroImage}
           resizeMode="contain"
         />
@@ -23,28 +23,32 @@ export default function Example({ navigation }) {
       <View style={styles.content}>
         <View style={styles.contentHeader}>
           <Text style={styles.title}>
-            Love{'\n'}Create {' '}
+            Love{"\n"}Create{" "}
             <View style={styles.appName}>
               <Text style={styles.appNameText}> Share</Text>
             </View>
           </Text>
           <Text style={styles.text}>
-            Empower is designed to teach you how to address the challenges and obstacles that you will face, especially as you grow older and take on more responsibility.
+            Empower is designed to teach you how to address the challenges and
+            obstacles that you will face, especially as you grow older and take
+            on more responsibility.
           </Text>
         </View>
 
         <TouchableOpacity
           onPress={() => {
             // handle onPress
-          }}>
+          }}
+        >
           <View style={styles.button}>
             <Text style={styles.buttonText}>Student</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
-            navigation.navigate("Auth")
-          }}>
+            navigation.navigate("Auth");
+          }}
+        >
           <View style={styles.button}>
             <Text style={styles.buttonText}>Participant/Club Leader</Text>
           </View>
@@ -52,10 +56,10 @@ export default function Example({ navigation }) {
         <TouchableOpacity
           onPress={() => {
             // handle onPress
-          }}>
+          }}
+        >
           <View style={styles.button}>
-            <Text style={styles.buttonText}>Get Help
-            </Text>
+            <Text style={styles.buttonText}>Get Help</Text>
           </View>
         </TouchableOpacity>
       </View>
@@ -67,24 +71,22 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  icon: {
-
-  },
+  icon: {},
   hero: {
-    backgroundColor: '#d496a7',
-    marginTop: 50,
+    backgroundColor: "#d496a7",
+    marginTop: 30,
     marginRight: 20,
     marginLeft: 20,
     borderRadius: 16,
     padding: 16,
   },
   heroImage: {
-    width: '100%',
+    width: "100%",
     height: 300,
   },
   content: {
     flex: 1,
-    justifyContent: 'space-between',
+    justifyContent: "space-between",
     paddingVertical: 24,
     paddingHorizontal: 24,
   },
@@ -93,41 +95,45 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 28,
-    fontWeight: '500',
-    color: '#281b52',
-    textAlign: 'center',
+    fontWeight: "500",
+    color: "#281b52",
+    textAlign: "center",
     marginBottom: 12,
     lineHeight: 40,
-  }, appName: {
-    backgroundColor: '#d496a7',
+  },
+  appName: {
+    backgroundColor: "#d496a7",
     transform: [
       {
-        rotate: '-5deg',
+        rotate: "-5deg",
       },
     ],
     paddingHorizontal: 6,
-  }, appNameText: {
+  },
+  appNameText: {
     fontSize: 28,
-    fontWeight: '700',
-    color: '#281b52',
-  }, text: {
+    fontWeight: "700",
+    color: "#281b52",
+  },
+  text: {
     fontSize: 15,
     lineHeight: 24,
-    fontWeight: '400',
-    color: '#9992a7',
-    textAlign: 'center',
-  }, button: {
-    backgroundColor: '#d496a7',
+    fontWeight: "400",
+    color: "#9992a7",
+    textAlign: "center",
+  },
+  button: {
+    backgroundColor: "#d496a7",
     paddingVertical: 12,
     paddingHorizontal: 14,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     borderRadius: 12,
-    marginTop: 15
+    marginTop: 15,
   },
   buttonText: {
     fontSize: 15,
-    fontWeight: '500',
-    color: '#fff',
+    fontWeight: "500",
+    color: "#fff",
   },
 });
