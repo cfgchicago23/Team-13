@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { PaperProvider } from 'react-native-paper';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
 import Landing from "./src/screens/LandingScreen/LandingScreen";
 import Education from './src/screens/EducationScreen/EducationScreen';
 import Community from "./src/screens/CommunityScreen/CommunityScreen"
@@ -12,6 +13,7 @@ import Authenticate from "./src/screens/LoginScreen/LoginScreen"
 import { initFirebaseApp } from './src/utils/firebase';
 
 const app = initFirebaseApp()
+
 const Stack = createNativeStackNavigator()
 
 
