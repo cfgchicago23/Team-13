@@ -26,16 +26,18 @@ const getFirebaseStore = () => {
 
 const getFirebaseAuth = () => {
   const app = initFirebaseApp()
-  return getAuth(app)
+  const auth = getAuth(app)
+  return auth
 }
 
 const signUp = async (email, password) => {
   const auth = getFirebaseAuth()
   try {
-    const user = await createUserWithEmailAndPassword(auth, email, password)
-    return user
+    const res = await createUserWithEmailAndPassword(auth, email, password)
+    return res.user
   }
   catch (e) {
+    console.log(e)
     return null
   }
 
