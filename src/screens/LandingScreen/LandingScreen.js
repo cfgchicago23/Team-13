@@ -24,10 +24,7 @@ import {
 
 export default function Example() {
   return (
-<<<<<<< HEAD
 
-=======
->>>>>>> c15f0ca736d0295b7996f07fd77330592f68ad2b
     <SafeAreaView style={styles.container}>
       <View style={styles.hero}>
         <Image
