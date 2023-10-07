@@ -1,3 +1,4 @@
+import HelpScreen from "./src/screens/HelpScreen/HelpScreen";
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { PaperProvider } from 'react-native-paper';
@@ -22,6 +23,7 @@ function App() {
         <Stack.Screen name="Education" component={ Education } />
         <Stack.Screen name="Community" component={ Community } />
         <Stack.Screen name="Authenticate" component={ Authenticate } /> 
+        <Stack.Screen name="Help" component={ HelpScreen } />
       </Stack.Navigator>
     </NavigationContainer>
   );
