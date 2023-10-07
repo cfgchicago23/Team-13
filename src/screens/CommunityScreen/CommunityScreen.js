@@ -1,28 +1,33 @@
 import * as React from 'react';
 import { BottomNavigation, Text } from 'react-native-paper';
 
-const MusicRoute = () => <Text>Music</Text>;
+import Clubs from './ClubsScreen';
+import Forums from './ForumsScreen';
+import NewsFeed from './NewsfeedScreen';
+import Settings from './SettingsScreen';
 
-const AlbumsRoute = () => <Text>Albums</Text>;
+const SettingsRoute = () => <Settings />;
 
-const RecentsRoute = () => <Text>Recents</Text>;
+const NewsFeedRoute = () => <NewsFeed />;
 
-const NotificationsRoute = () => <Text>Notifications</Text>;
+const ClubsRoute = () => <Clubs />;
+
+const ForumsRoute = () => <Forums />;
 
 const MyComponent = () => {
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
-    { key: 'music', title: 'Favorites', focusedIcon: 'heart', unfocusedIcon: 'heart-outline'},
-    { key: 'albums', title: 'Albums', focusedIcon: 'album' },
-    { key: 'recents', title: 'Recents', focusedIcon: 'history' },
-    { key: 'notifications', title: 'Notifications', focusedIcon: 'bell', unfocusedIcon: 'bell-outline' },
+    { key: 'forums', title: 'Chat', focusedIcon: 'chat', unfocusedIcon: 'chat-outline'},
+    { key: 'newsfeed', title: 'News', focusedIcon: 'newspaper-variant', unfocusedIcon: 'newspaper-variant-outline' },
+    { key: 'clubs', title: 'Clubs', focusedIcon: 'hand-heart', unfocusedIcon: 'hand-heart-outline' },
+    { key: 'settings', title: 'Settings', focusedIcon: 'account-settings', unfocusedIcon: 'account-settings-outline' },
   ]);
 
   const renderScene = BottomNavigation.SceneMap({
-    music: MusicRoute,
-    albums: AlbumsRoute,
-    recents: RecentsRoute,
-    notifications: NotificationsRoute,
+    forums: ForumsRoute,
+    newsfeed: NewsFeedRoute,
+    clubs: ClubsRoute,
+    settings: SettingsRoute,
   });
 
   return (

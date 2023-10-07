@@ -18,11 +18,12 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen name="Community" component={ Community } />
         <Stack.Screen name="Landing" component={ Landing } />
         <Stack.Screen name="Education" component={ Education } />
         <Stack.Screen name="Help" component={ HelpScreen} />
         <Stack.Screen name="Auth" component={ AuthPage } />
-        <Stack.Screen name="Community" component={ Community } />
+        {/* <Stack.Screen name="Community" component={ Community } /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );
