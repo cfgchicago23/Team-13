@@ -104,7 +104,7 @@ const lessons = [
   },
   {
     title: "Setting Goals",
-    steps: 3,
+    steps: 4,
     contents: ["Story", "Reflection Questions","Venn Diagrams", "Journal"]
   },
   {
@@ -114,7 +114,7 @@ const lessons = [
   },
   {
     title: "Being a Role Model",
-    steps: 3,
+    steps: 4,
     contents: ["Story", "Reflection Questions", "Future Self-Portrait","Journal"]
   },
 ];
@@ -144,7 +144,8 @@ function LessonAccordion({ title, steps, contents }) {
 function About() {
     return (
         <View style={styles.aboutContainer}>
-            <Text style={styles.paragraph}>Empower consists of lessons around building character, overcoming challenges, influencing others well, and planning for the future...</Text>
+            <Text style={styles.paragraph}>Empower consists of lessons around building character, overcoming challenges, influencing others well, and planning for the future. Lessons consist of foundational lessons designed to build a sense of community and friendship amongst young girls and strengthen self-image, social skills and healthy habits. Each lesson is composed of a lesson, discussion, activities and a sample journal prompt for you to record your thoughts. The lessons are adaptable to different age groups, religious affiliations and educational systems.
+</Text>
             <Text style={styles.paragraph}>Empower is designed to teach you how to address the challenges and obstacles that you will face, especially as you grow older and take on more responsibility. While each girl encounters different trials, it is important to provide a safe environment to prepare you for the future. Many of the stories in these lessons involve older female characters that are portrayed as trusted figures. These trusted relationships should encourage you to reflect on the trusted and reliable adult females in your life.
 </Text>
             <Text style={styles.paragraph}>Lessons that address positive thinking are designed to help you discover healthy ways of dealing with stress and difficult situations. Those that address facing obstacles and enduring hardship are meant to allow a space where you can identify and tackle the challenges you face, whether at home, school or in your community! Let's get started!
