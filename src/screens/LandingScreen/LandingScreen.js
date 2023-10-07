@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ImageBackground } from 'react-native';
 import { IconButton, MD3Colors } from 'react-native-paper'
 import {
@@ -11,8 +11,58 @@ import {
 } from 'react-native';
 
 export default function Example({ navigation }) {
+  const [menuVisible, setMenuVisible] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuVisible(!menuVisible);
+  };
+
+  const languages = [
+    'English',
+    'Spanish',
+    'French',
+    'Hindi',
+    'Magyar',
+    'Thai',
+    'Burmese',
+  ];
+
   return (
     <SafeAreaView style={styles.container}>
+  
+
+      <View style={styles.menuIconContainer}>
+        <IconButton
+          icon={menuVisible ? 'close' : 'dots-vertical'}
+          color="#fff"
+          size={24}
+          onPress={toggleMenu}
+        />
+      </View>
+      
+      {menuVisible && (
+        <View style={styles.menu}>
+          {languages.map((language, index) => (
+            <TouchableOpacity
+              key={index}
+              onPress={() => {
+                navigation.navigate('Language', { language });
+                toggleMenu(); // Close the menu
+              }}
+            >
+              <Text style={styles.menuOption}>{language}</Text>
+            </TouchableOpacity>
+          ))}
+        </View>
+      )}
+    
+
+
+
+
+
+
+
       <View style={styles.hero}>
         <Image
           source={require('./empower.png')}
@@ -69,6 +119,25 @@ const styles = StyleSheet.create({
   },
   icon: {
 
+  },
+  menuIconContainer: {
+    position: 'absolute',
+    top: 20,
+    right: 20,
+    zIndex: 1,
+  },
+  menu: {
+    position: 'absolute',
+    top: 60,
+    right: 20,
+    backgroundColor: '#fff',
+    borderRadius: 8,
+    elevation: 3,
+    zIndex: 2,
+  },
+  menuOption: {
+    paddingVertical: 10,
+    paddingHorizontal: 20,
   },
   hero: {
     backgroundColor: '#d496a7',
