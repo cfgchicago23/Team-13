@@ -23,7 +23,7 @@ function Auth({ navigation }) {
       <View style={styles.content}>
         <TouchableOpacity
           onPress={() => {
-            // handle onPress
+            navigation.navigate("Login")
           }}>
           <View style={styles.button}>
             <Text style={styles.buttonText}>Sign In</Text>
@@ -31,7 +31,7 @@ function Auth({ navigation }) {
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
-            // handle onPress
+            navigation.navigate("Signup")
           }}>
           <View style={styles.button}>
             <Text style={styles.buttonText}>Sign Up</Text>
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     paddingVertical: 24,
     paddingHorizontal: 24,
   },
@@ -77,7 +77,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 12,
     lineHeight: 40,
-  }, appName: {
+  }, 
+  appName: {
     backgroundColor: '#d496a7',
     transform: [
       {
@@ -85,24 +86,27 @@ const styles = StyleSheet.create({
       },
     ],
     paddingHorizontal: 6,
-  }, appNameText: {
+  }, 
+  appNameText: {
     fontSize: 28,
     fontWeight: '700',
     color: '#281b52',
-  }, text: {
+  }, 
+  text: {
     fontSize: 15,
     lineHeight: 24,
     fontWeight: '400',
     color: '#9992a7',
     textAlign: 'center',
-  }, button: {
+  }, 
+  button: {
     backgroundColor: '#d496a7',
     paddingVertical: 12,
     paddingHorizontal: 14,
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 12,
-    marginTop: 15
+    marginBottom: 10,
   },
   buttonText: {
     fontSize: 15,
