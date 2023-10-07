@@ -23,7 +23,7 @@ function Auth({ navigation }) {
       <View style={styles.content}>
         <TouchableOpacity
           onPress={() => {
-            // handle onPress
+            navigation.navigate("Login")
           }}>
           <View style={styles.button}>
             <Text style={styles.buttonText}>Sign In</Text>
@@ -31,7 +31,7 @@ function Auth({ navigation }) {
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
-            // handle onPress
+            navigation.navigate("Signup")
           }}>
           <View style={styles.button}>
             <Text style={styles.buttonText}>Sign Up</Text>
