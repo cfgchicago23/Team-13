@@ -43,7 +43,7 @@ export default function Example({ navigation }) {
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
-            // handle onPress
+            navigation.navigate("Auth")
           }}>
           <View style={styles.button}>
             <Text style={styles.buttonText}>Participant/ Club Leader</Text>
@@ -131,4 +131,3 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
 });
-

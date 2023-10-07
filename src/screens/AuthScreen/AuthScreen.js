@@ -10,7 +10,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-export default function Auth({ navigation }) {
+function Auth({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.hero}>
@@ -111,3 +111,4 @@ const styles = StyleSheet.create({
   },
 });
 
+export default Auth;
