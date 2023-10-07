@@ -38,7 +38,7 @@ const signUp = async (email, password) => {
   }
   catch (e) {
     console.log(e)
-    return null
+    throw e
   }
 
 }

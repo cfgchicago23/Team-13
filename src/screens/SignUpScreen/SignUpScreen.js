@@ -7,8 +7,11 @@ const Signup = ({ navigation }) => {
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
     const [visible, setVisible] = React.useState(false);
+    const [visible2, setVisible2] = React.useState(false);
     const onToggleSnackBar = () => setVisible(!visible);
     const onDismissSnackBar = () => setVisible(false);
+    const onToggleSnackBar2 = () => setVisible2(!visible2);
+    const onDismissSnackBar2 = () => setVisible2(false);
 
     const sendData = async () => {
         if (password.length < 5) {
@@ -17,12 +20,28 @@ const Signup = ({ navigation }) => {
                 setVisible(false)
             }, 3000)
         }
-        const res = await signUp(userName, password)
-        if (res && res.email) {
-            navigation.navigate("Community")
+        let res = null
+        try {
+            res = await signUp(userName, password)
+
+            if (res && res.email) {
+                navigation.navigate("Community")
+            }
+            else {
+                setVisible2(true)
+                setTimeout(() => {
+                    setVisible2(false)
+                }, 3000)
+               console.log("Some error with creating new user")
+            }
+            
         }
-        else {
-            console.log("Invalid Email / Password")
+        catch (e) {
+            setVisible2(true)
+            setTimeout(() => {
+                setVisible2(false)
+            }, 3000)
+            
         }
     }
 
@@ -68,6 +87,10 @@ const Signup = ({ navigation }) => {
                     <Snackbar
                         visible={visible}>
                         Please use a larger password!
+                    </Snackbar>
+                    <Snackbar
+                        visible={visible2}>
+                        Error signing in! Try again!
                     </Snackbar>
                 </View>
 
