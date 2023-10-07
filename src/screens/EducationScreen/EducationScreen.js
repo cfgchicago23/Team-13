@@ -193,7 +193,6 @@ const styles = StyleSheet.create({
   appTitle: {
     fontSize: 36,
     fontWeight: 'bold',
-    fontFamily: 'cursive',
     color: '#b77a72',
     textAlign: 'center',
     marginVertical: 16,
