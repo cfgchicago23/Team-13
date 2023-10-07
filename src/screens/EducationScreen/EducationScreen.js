@@ -10,112 +10,112 @@ const lessons = [
   {
     title: "Being Unique",
     steps: 3,
-    contents: ["Story", "All About Me Autobiography", "Journal"]
+    contents: ["○ Story", "○ All About Me Autobiography", " ○ Journal"]
   },
   {
     title: "Being a Good Friend",
     steps: 3,
-    contents: ["Story", "Good Friends and Bad Friends", "Journal"]
+    contents: ["○ Story", " ○ Good Friends and Bad Friends", "○ Journal"]
   },
   {
     title: "Making Healthy Choices",
     steps: 5,
-    contents: ["Story", "Maintaining a Balanced Diet", "Tips for Planning Meals", "Grow Your Own Garden", "Journal"]
+    contents: ["○ Story", "○ Maintaining a Balanced Diet", "○ Tips for Planning Meals", "○ Grow Your Own Garden", "○ Journal"]
   },
   {
     title: "What Makes You Happy?",
     steps: 3,
-    contents: ["Story", "Reflection Questions", "Journal"]
+    contents: ["○ Story", "○ Reflection Questions", "○ Journal"]
   },
   {
     title: "Self-Image",
     steps: 4,
-    contents: ["Story", "Reflection Questions", "Dove Evolution Campaign", "Journal"]
+    contents: ["○ Story", "○ Reflection Questions", "○ Dove Evolution Campaign", "○ Journal"]
   },
   {
     title: "Choosing Good Friends",
     steps: 4,
-    contents: ["Story", "Reflection Questions","Friendship Letters", "Journal"]
+    contents: ["○ Story", "○ Reflection Questions","○ Friendship Letters", "○ Journal"]
   },
   {
     title: "Peer Pressure",
     steps: 3,
-    contents: ["Story", "Reflection Questions", "Journal"]
+    contents: ["○ Story", "○ Reflection Questions", "○ Journal"]
   },
   {
     title: "Thinking Positively",
     steps: 5,
-    contents: ["Story", "Reflection Questions", "Practicing Gratitude", "Positively Me", "Journal"]
+    contents: ["○ Story", "○ Reflection Questions", "○ Practicing Gratitude", "○ Positively Me", "○ Journal"]
   },
   {
     title: "Staying Optimistic",
     steps: 4,
-    contents: ["Story", "Reflection Questions", "Thank You & Encouragement Cards","Journal"]
+    contents: ["○ Story", "○ Reflection Questions", "○ Thank You & Encouragement Cards","○ Journal"]
   },
   {
     title: "Stress Less",
     steps: 4,
-    contents: ["Story", "Reflection Questions", "Weekly Planners","Journal"]
+    contents: ["○ Story", "○ Reflection Questions", "○ Weekly Planners","○ Journal"]
   },
   {
     title: "Influencing Well",
     steps: 3,
-    contents: ["Story", "Reflection Questions", "Journal"]
+    contents: ["○ Story", "○ Reflection Questions", "○ Journal"]
   },
   {
     title: "Facing Obstacles",
     steps: 3,
-    contents: ["Story", "Reflection Questions", "Journal"]
+    contents: ["○ Story", "○ Reflection Questions", "○ Journal"]
   },
   {
     title: "Speaking Out",
     steps: 4,
-    contents: ["Story", "Reflection Questions","Nature Prints", "Journal"]
+    contents: ["○ Story", "○ Reflection Questions","○ Nature Prints", "○ Journal"]
   },
   {
     title: "Enduring Hardship",
     steps: 3,
-    contents: ["Story", "Reflection Questions", "Journal"]
+    contents: ["○ Story", "○ Reflection Questions", "○ Journal"]
   },
   {
     title: "Dealing with Change",
     steps: 4,
-    contents: ["Story", "Reflection Questions", "Painting Emotions","Journal"]
+    contents: ["○ Story", "○ Reflection Questions", "○ Painting Emotions","○ Journal"]
   },
   {
     title: "Discovering Potential?",
     steps: 5,
-    contents: ["Story", "Reflection Questions", "I Love Being a Girl", "Footprints","Journal"]
+    contents: ["○ Story", "○ Reflection Questions", "○ I Love Being a Girl", "○ Footprints","○ Journal"]
   },
   {
     title: "Relationships",
     steps: 3,
-    contents: ["Story", "Reflection Questions", "Journal"]
+    contents: ["○ Story", "○ Reflection Questions", "○ Journal"]
   },
   {
     title: "Staying Safe",
     steps: 4,
-    contents: ["Story", "Chart","Reflection Questions", "Journal"]
+    contents: ["○ Story", "○ Chart","○ Reflection Questions", "○ Journal"]
   },
   {
     title: "It's Ok to Say No",
     steps: 3,
-    contents: ["Story", "Reflection Questions", "Journal"]
+    contents: ["○ Story", "○ Reflection Questions", "○ Journal"]
   },
   {
     title: "Setting Goals",
     steps: 4,
-    contents: ["Story", "Reflection Questions","Venn Diagrams", "Journal"]
+    contents: ["○ Story", "○ Reflection Questions","○ Venn Diagrams", "○ Journal"]
   },
   {
     title: "Learning How to Lead",
     steps: 4,
-    contents: ["Story", "Reflection Questions", "Card Making","Journal"]
+    contents: ["○ Story", "○ Reflection Questions", "○ Card Making","○ Journal"]
   },
   {
     title: "Being a Role Model",
     steps: 4,
-    contents: ["Story", "Reflection Questions", "Future Self-Portrait","Journal"]
+    contents: ["○ Story", "○ Reflection Questions", "○ Future Self-Portrait","○ Journal"]
   },
 ];
 
@@ -132,7 +132,7 @@ function LessonAccordion({ title, steps, contents }) {
           <List.Item
             key={content}
             title={content}
-            titleStyle={{ color: 'black' }}
+            titleStyle={{ color: 'black',   fontWeight: 'bold',}}
           />
         ))}
     </List.Accordion>
