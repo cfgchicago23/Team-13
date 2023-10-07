@@ -29,15 +29,15 @@ export default function Example({ navigation }) {
 
   return (
     <SafeAreaView style={styles.container}>
-  
-
-      <View style={styles.menuIconContainer}>
-        <IconButton
-          icon={menuVisible ? 'close' : 'dots-vertical'}
-          color="#fff"
-          size={24}
-          onPress={toggleMenu}
-        />
+      <View style={styles.topNavigation}>
+        <View style={styles.menuIconContainer}>
+          <IconButton
+            icon={menuVisible ? 'close' : 'dots-vertical'}
+            color="#fff"
+            size={24}
+            onPress={toggleMenu}
+          />
+        </View>
       </View>
       
       {menuVisible && (
@@ -55,11 +55,6 @@ export default function Example({ navigation }) {
           ))}
         </View>
       )}
-    
-
-
-
-
 
 
 
@@ -116,6 +111,10 @@ export default function Example({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  topNavigation: {
+    backgroundColor: '#d496a7',
+    paddingBottom: 10,
   },
   icon: {
 
