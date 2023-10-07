@@ -1,14 +1,22 @@
 import React, { useState, useCallback } from 'react';
 import { Appbar, PaperProvider, Text, TextInput, Button } from 'react-native-paper';
 import { View } from 'react-native';
+import { initFirebaseApp, getFirebaseStore, signUp } from '../../utils/firebase'
 
 const Signup = () => {
   const [userName, setUserName] = useState("");
   const [passWord, setPassword] = useState("");
 
-  const sendData = useCallback(() => {
+  const sendData = async () => {
+    const user = await signUp(email, passWord)
+    if (user != Null) {
+        naviation.navigate("Community")
+    }
+    else {
+        console.log("Invalid User / Password")
+    }
 
-  }, [])
+}
 
 
   return (

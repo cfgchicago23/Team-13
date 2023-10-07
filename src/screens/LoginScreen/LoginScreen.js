@@ -1,14 +1,23 @@
 import React, { useState, useCallback } from 'react';
-import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native';
-import { Appbar, PaperProvider, Button} from 'react-native-paper';
+import { View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { Appbar, PaperProvider, Button } from 'react-native-paper';
+import { initFirebaseApp, getFirebaseStore, signIn } from '../../utils/firebase'
 
-const Login = () => {
-    const[email,setEmail] = useState("");
-    const[passWord,setPassword] = useState("");
 
-const sendData=useCallback(()=>{
-    
-},[])
+const Login = ({naviation}) => {
+    const [email, setEmail] = useState("");
+    const [passWord, setPassword] = useState("");
+
+    const sendData = async () => {
+        const user = await signIn(email, passWord)
+        if (user != Null) {
+            naviation.navigate("Community")
+        }
+        else {
+            console.log("Invalid User / Password")
+        }
+
+    }
 
 
     return (
@@ -52,7 +61,7 @@ const sendData=useCallback(()=>{
                 </View>
             </View>
         </View>
-      //</>
+        //</>
     );
 };
 
@@ -87,19 +96,19 @@ const styles = {
         color: 'black',
     },
     button: {
-      backgroundColor: '#d496a7',
-      paddingVertical: 12,
-      paddingHorizontal: 14,
-      alignItems: 'center',
-      justifyContent: 'center',
-      borderRadius: 12,
-      marginTop: 15,
+        backgroundColor: '#d496a7',
+        paddingVertical: 12,
+        paddingHorizontal: 14,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 12,
+        marginTop: 15,
     },
     buttonText: {
-      fontSize: 15,
-      fontWeight: '500',
-      color: '#fff',
+        fontSize: 15,
+        fontWeight: '500',
+        color: '#fff',
     },
-  };
+};
 
 export default Login;
