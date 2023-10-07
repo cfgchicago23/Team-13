@@ -54,14 +54,14 @@ export default function Example({ navigation }) {
           </View>
         </TouchableOpacity>
         
-        <Text style={styles.text}>Share!</Text>
+        {/* <Text style={styles.text}>Share!</Text> */}
 
-        <View style={styles.socialIconsContainer}>
+        {/* <View style={styles.socialIconsContainer}>
           <SocialIcon url="https://facebook.com/sharer/sharer.php?u=https://www.daughterproject.org/challenge-page/1be55fc3-4dcf-44bc-a498-831250f91d2e&quote=Come%20join%20Empower!" network="facebook" bgColor="black" />
           <SocialIcon url="https://twitter.com/intent/tweet?text=Come%20join%20Empower!&url=https://www.daughterproject.org/challenge-page/1be55fc3-4dcf-44bc-a498-831250f91d2e" network="twitter" bgColor="black" />
           <SocialIcon url="https://static.wixstatic.com/media/11062b_7d5d7755a5ef46bf967bbef84df0cd5d~mv2.jpg/v1/fill/w_2291,h_3689,al_c,q_90,enc_auto/11062b_7d5d7755a5ef46bf967bbef84df0cd5d~mv2.jpg" network="linkedin" bgColor="black" />
           <SocialIcon url="https://www.daughterproject.org/challenge-page/1be55fc3-4dcf-44bc-a498-831250f91d2e" network="email" bgColor="black" />
-        </View>
+        </View> */}
       </View>
     </ScrollView>
   );
