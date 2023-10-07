@@ -4,10 +4,12 @@ import { Button, StyleSheet, Text, View } from 'react-native';
 export default function LandingScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      <Button title='nice' onPress={() => {
+      <Button title='learn' onPress={() => {
         navigation.navigate("Education")
       }} />
-      <StatusBar style="auto" />
+      <Button title='lead' onPress={() => {
+        navigation.navigate("Community")
+      }} />
     </View>
   );
 }
