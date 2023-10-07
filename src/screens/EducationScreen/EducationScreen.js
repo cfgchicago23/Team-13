@@ -157,8 +157,7 @@ export default function EducationScreen() {
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.content}>
-        <Text style={styles.appTitle}>Education Screen</Text>
-        <Text style={styles.title}>Empower</Text>
+        <Text style={styles.appTitle}>Empower</Text>
         <Text style={styles.title}>82 Steps</Text>
 
         <View style={styles.videoContainer}>
@@ -193,6 +192,7 @@ const styles = StyleSheet.create({
   appTitle: {
     fontSize: 36,
     fontWeight: 'bold',
+    fontFamily: 'cursive',
     color: '#b77a72',
     textAlign: 'center',
     marginVertical: 16,
