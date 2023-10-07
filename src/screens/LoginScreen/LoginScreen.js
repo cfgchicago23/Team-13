@@ -1,4 +1,3 @@
-
 import React, { useState, useCallback } from 'react';
 import { Appbar, PaperProvider, Text, TextInput, Button} from 'react-native-paper';
 import { View } from 'react-native';
@@ -40,4 +39,3 @@ const sendData=useCallback(()=>{
       </>
     );
 };
-
