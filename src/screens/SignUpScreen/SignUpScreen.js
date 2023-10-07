@@ -1,43 +1,43 @@
 import React, { useState, useCallback } from 'react';
-import { Appbar, PaperProvider, Text, TextInput, Button} from 'react-native-paper';
+import { Appbar, PaperProvider, Text, TextInput, Button } from 'react-native-paper';
 import { View } from 'react-native';
 
-export default SignPage = () => {
-    const[userName,setUserName] = useState("");
-    const[passWord,setPassword] = useState("");
+const Signup = () => {
+  const [userName, setUserName] = useState("");
+  const [passWord, setPassword] = useState("");
 
-const sendData=useCallback(()=>{
-    
-},[])
+  const sendData = useCallback(() => {
+
+  }, [])
 
 
-return (
+  return (
     <>
-    <View>
+      <View>
         <Appbar.Header>
-        <Appbar.Content title="Title" />
+          <Appbar.Content title="Title" />
         </Appbar.Header>
-    </View>
-    
-    
+      </View>
 
-    <TextInput
-      label="Username: "
-      value={userName}
-      onChange={(event)=>{setUserName(event.target.value)}}
+
+
+      <TextInput
+        label="Username: "
+        value={userName}
+        onChange={(event) => { setUserName(event.target.value) }}
       />
 
-    <TextInput
-      label="Password: "
-      value={passWord}
-      onChange={(event)=>{setPassword(event.target.value)}}
-    />
+      <TextInput
+        label="Password: "
+        value={passWord}
+        onChange={(event) => { setPassword(event.target.value) }}
+      />
 
-    <Button mode="contained" onPress={sendData}>
+      <Button mode="contained" onPress={sendData}>
         Log In
-    </Button>
-  </>
-);
+      </Button>
+    </>
+  );
 };
 
-
+export default Signup;
