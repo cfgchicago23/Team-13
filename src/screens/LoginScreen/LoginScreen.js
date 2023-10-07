@@ -3,12 +3,13 @@ import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native';
 import { Appbar, PaperProvider, Button } from 'react-native-paper';
 import { initFirebaseApp, getFirebaseStore, signIn } from '../../utils/firebase'
 
-const Login = ({navigation}) => {
+
+const Login = ({ navigation }) => {
     const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+    const [passWord, setPassword] = useState("");
 
     const sendData = async () => {
-        const user = await signIn(email, password)
+        const user = await signIn(email, passWord)
         if (user != null) {
             navigation.navigate("Community")
         }
@@ -18,33 +19,46 @@ const Login = ({navigation}) => {
     }
 
     return (
-        <View style={styles.content}>
+        //<>
+        <View style={styles.container}>
+            <Text style={styles.header}>Log In</Text>
+
             <View style={styles.hero}>
-                
-                <Text style={styles.label}>Email :</Text>
-                <TextInput
-                label="Email: "
-                value={email}
-                onChange={(event)=>{setEmail(event.target.value)}}
-                style={styles.input}
+                <Image
+                    source={require('./empower.png')}
+                    style={[styles.logo, styles.heroImage]}
+                    resizeMode="contain"
                 />
+            </View>
+            <View style={styles.space}></View>
 
-                <Text style={styles.label}>Password :</Text>
-                <TextInput
-                label="Password: "
-                value={password}
-                secureTextEntry={true}
-                onChange={(event)=>{setPassword(event.target.value)}}
-                style={styles.input}
-                />
+            <View style={styles.content}>
+                <View style={styles.hero}>
+                    
+                    <Text style={styles.label}>Email :</Text>
+                    <TextInput
+                    label="Email: "
+                    value={email}
+                    onChange={(event)=>{setEmail(event.target.value)}}
+                    style={styles.input}
+                    />
 
-                <Button 
-                    mode="contained" 
-                    onPress={sendData}
-                    style={styles.button}
-                    labelStyle={styles.buttonText}>
-                    Log In
-                </Button>
+                    <Text style={styles.label}>Password :</Text>
+                    <TextInput
+                    label="Password: "
+                    value={passWord}
+                    onChange={(event)=>{setPassword(event.target.value)}}
+                    style={styles.input}
+                    />
+
+                    <Button 
+                        mode="contained" 
+                        onPress={sendData}
+                        style={styles.button}
+                        labelStyle={styles.buttonText}>
+                        Log In
+                    </Button>
+                </View>
             </View>
         </View>
         //</>
