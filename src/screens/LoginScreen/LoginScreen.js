@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native';
 import { Appbar, PaperProvider, Button} from 'react-native-paper';
 
 const Login = () => {
@@ -14,30 +14,42 @@ const sendData=useCallback(()=>{
     return (
         //<>
         <View style={styles.container}>
-            <Text style={styles.label}>Email:</Text>
+
             <View style={styles.hero}>
-                <TextInput
-                label="Email: "
-                value={email}
-                onChange={(event)=>{setUserName(event.target.value)}}
-                style={styles.input}
+                <Image
+                    source={require('./empower.png')}
+                    style={[styles.logo, styles.heroImage]}
+                    resizeMode="contain"
                 />
+            </View>
 
-                <TextInput
-                label="Password: "
-                value={passWord}
-                onChange={(event)=>{setPassword(event.target.value)}}
-                style={styles.input}
-                />
+            <View style={styles.content}>
+                <View style={styles.hero}>
+                    <Text style={styles.label}>Email :</Text>
+                    <TextInput
+                    label="Email: "
+                    value={email}
+                    onChange={(event)=>{setUserName(event.target.value)}}
+                    style={styles.input}
+                    />
 
-                <Button 
-                    mode="contained" 
-                    onPress={sendData}
-                    style={styles.button}
-                    labelStyle={styles.buttonText}
-                >
-                    Log In
-                </Button>
+                    <Text style={styles.label}>Password :</Text>
+                    <TextInput
+                    label="Password: "
+                    value={passWord}
+                    onChange={(event)=>{setPassword(event.target.value)}}
+                    style={styles.input}
+                    />
+
+                    <Button 
+                        mode="contained" 
+                        onPress={sendData}
+                        style={styles.button}
+                        labelStyle={styles.buttonText}
+                    >
+                        Log In
+                    </Button>
+                </View>
             </View>
         </View>
       //</>
@@ -55,6 +67,16 @@ const styles = {
         backgroundColor: 'white',
         borderRadius: 16,
         padding: 16,
+    },
+    heroImage: {
+        width: '100%',
+        height: 400,
+    },
+    label: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        marginBottom: 8,
+        color: 'black',
     },
     input: {
         marginBottom: 15,
