@@ -3,20 +3,18 @@ import { Appbar, PaperProvider, Text, TextInput, Button } from 'react-native-pap
 import { View } from 'react-native';
 import { initFirebaseApp, getFirebaseStore, signUp } from '../../utils/firebase'
 
-const Signup = ({naviation}) => {
-  const [userName, setUserName] = useState("");
-  const [passWord, setPassword] = useState("");
+const Signup = ({navigation}) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const sendData = async () => {
-    navigation.navigate("Community")
-    // const user = await signUp(email, passWord)
-    // if (user != Null) {
-    //   naviation.navigate("Community")
-    // }
-    // else {
-    //   console.log("Invalid User / Password")
-    // }
-
+    const user = await signUp(email, password)
+    if (user) {
+      naviation.navigate("Community")
+    }
+    else {
+      console.log("Invalid Email / Password")
+    }
   }
 
 
@@ -25,14 +23,14 @@ const Signup = ({naviation}) => {
 
 
       <TextInput
-        label="Username: "
-        value={userName}
-        onChange={(event) => { setUserName(event.target.value) }}
+        label="Email: "
+        value={email}
+        onChange={(event) => { setEmail(event.target.value) }}
       />
 
       <TextInput
         label="Password: "
-        value={passWord}
+        value={password}
         onChange={(event) => { setPassword(event.target.value) }}
       />
 
