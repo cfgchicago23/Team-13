@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 12,
-    marginBottom: 10,
+    marginBottom: 40,
   },
   buttonText: {
     fontSize: 15,
