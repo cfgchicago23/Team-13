@@ -10,7 +10,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-export default function Example({ navigation }) {
+function Auth({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.hero}>
@@ -21,32 +21,12 @@ export default function Example({ navigation }) {
         />
       </View>
       <View style={styles.content}>
-        <View style={styles.contentHeader}>
-          <Text style={styles.title}>
-            Love{'\n'}Create {' '}
-            <View style={styles.appName}>
-              <Text style={styles.appNameText}> Share</Text>
-            </View>
-          </Text>
-          <Text style={styles.text}>
-            Empower is designed to teach you how to address the challenges and obstacles that you will face, especially as you grow older and take on more responsibility.
-          </Text>
-        </View>
-
         <TouchableOpacity
           onPress={() => {
             // handle onPress
           }}>
           <View style={styles.button}>
-            <Text style={styles.buttonText}>Student</Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => {
-            navigation.navigate("Auth")
-          }}>
-          <View style={styles.button}>
-            <Text style={styles.buttonText}>Participant/ Club Leader</Text>
+            <Text style={styles.buttonText}>Sign In</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
@@ -54,8 +34,7 @@ export default function Example({ navigation }) {
             // handle onPress
           }}>
           <View style={styles.button}>
-            <Text style={styles.buttonText}>Get Help
-            </Text>
+            <Text style={styles.buttonText}>Sign Up</Text>
           </View>
         </TouchableOpacity>
       </View>
@@ -131,3 +110,5 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
 });
+
+export default Auth;

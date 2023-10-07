@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import { Appbar, PaperProvider, Text, TextInput, Button} from 'react-native-paper';
 
-const AuthPage = () => {
+const Login = () => {
     const[userName,setUserName] = useState("");
     const[passWord,setPassword] = useState("");
 
@@ -11,8 +11,7 @@ const sendData=useCallback(()=>{
 
 
     return (
-        <>    
-
+        <>
         <TextInput
           label="Username: "
           value={userName}
@@ -32,4 +31,4 @@ const sendData=useCallback(()=>{
     );
 };
 
-export default AuthPage;
+export default Login;
