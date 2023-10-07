@@ -1,14 +1,23 @@
 import React, { useState, useCallback } from 'react';
 import { View, Text, TextInput, TouchableOpacity } from 'react-native';
-import { Appbar, PaperProvider, Button} from 'react-native-paper';
+import { Appbar, PaperProvider, Button } from 'react-native-paper';
+import { initFirebaseApp, getFirebaseStore, signIn } from '../../utils/firebase'
 
-const Login = () => {
-    const[email,setEmail] = useState("");
-    const[passWord,setPassword] = useState("");
 
-const sendData=useCallback(()=>{
-    
-},[])
+const Login = ({naviation}) => {
+    const [email, setEmail] = useState("");
+    const [passWord, setPassword] = useState("");
+
+    const sendData = async () => {
+        const user = await signIn(email, passWord)
+        if (user != Null) {
+            naviation.navigate("Community")
+        }
+        else {
+            console.log("Invalid User / Password")
+        }
+
+    }
 
 
     return (
@@ -17,21 +26,21 @@ const sendData=useCallback(()=>{
             <Text style={styles.label}>Email:</Text>
             <View style={styles.hero}>
                 <TextInput
-                label="Email: "
-                value={email}
-                onChange={(event)=>{setUserName(event.target.value)}}
-                style={styles.input}
+                    label="Email: "
+                    value={email}
+                    onChange={(event) => { setUserName(event.target.value) }}
+                    style={styles.input}
                 />
 
                 <TextInput
-                label="Password: "
-                value={passWord}
-                onChange={(event)=>{setPassword(event.target.value)}}
-                style={styles.input}
+                    label="Password: "
+                    value={passWord}
+                    onChange={(event) => { setPassword(event.target.value) }}
+                    style={styles.input}
                 />
 
-                <Button 
-                    mode="contained" 
+                <Button
+                    mode="contained"
                     onPress={sendData}
                     style={styles.button}
                     labelStyle={styles.buttonText}
@@ -40,7 +49,7 @@ const sendData=useCallback(()=>{
                 </Button>
             </View>
         </View>
-      //</>
+        //</>
     );
 };
 
@@ -65,19 +74,19 @@ const styles = {
         color: 'black',
     },
     button: {
-      backgroundColor: '#d496a7',
-      paddingVertical: 12,
-      paddingHorizontal: 14,
-      alignItems: 'center',
-      justifyContent: 'center',
-      borderRadius: 12,
-      marginTop: 15,
+        backgroundColor: '#d496a7',
+        paddingVertical: 12,
+        paddingHorizontal: 14,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 12,
+        marginTop: 15,
     },
     buttonText: {
-      fontSize: 15,
-      fontWeight: '500',
-      color: '#fff',
+        fontSize: 15,
+        fontWeight: '500',
+        color: '#fff',
     },
-  };
+};
 
 export default Login;
