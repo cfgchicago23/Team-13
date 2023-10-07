@@ -164,10 +164,7 @@ export default function EducationScreen() {
         <Text style={styles.appTitle}>Empower</Text>
         <Text style={styles.title}>82 Steps</Text>
         <View style={styles.container}>
-        <WebView
-      source={{ uri: 'https://youtu.be/_v4TPH8Wlcw' }}
-      style={{ flex: 1 }}
-    />
+       
       </View>
         <Text style={styles.title}>About</Text>
         <About />
