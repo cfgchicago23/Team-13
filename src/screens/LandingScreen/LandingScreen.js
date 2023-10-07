@@ -1,10 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
 
-export default function LandingScreen() {
+export default function LandingScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text>Yo</Text>
+      <Button title='nice' onPress={() => {
+        navigation.navigate("Education")
+      }} />
       <StatusBar style="auto" />
     </View>
   );
