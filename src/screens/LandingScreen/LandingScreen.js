@@ -29,15 +29,15 @@ export default function Example({ navigation }) {
 
   return (
     <ScrollView style={styles.container}>
-      <View style={styles.topNavigation}>
-        <View style={styles.menuIconContainer}>
-          <IconButton
-            icon={menuVisible ? 'close' : 'dots-vertical'}
-            color="#fff"
-            size={24}
-            onPress={toggleMenu}
-          />
-        </View>
+  
+
+      <View style={styles.menuIconContainer}>
+        <IconButton
+          icon={menuVisible ? 'close' : 'dots-vertical'}
+          color="#fff"
+          size={24}
+          onPress={toggleMenu}
+        />
       </View>
       
       {menuVisible && (
@@ -55,8 +55,7 @@ export default function Example({ navigation }) {
           ))}
         </View>
       )}
-
-
+    
 
       <View style={styles.hero}>
         <Image
@@ -65,6 +64,7 @@ export default function Example({ navigation }) {
           resizeMode="contain"
         />
       </View>
+
       <View style={styles.content}>
         <View style={styles.contentHeader}>
           <Text style={styles.title}>
@@ -111,10 +111,6 @@ export default function Example({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
-  topNavigation: {
-    backgroundColor: '#d496a7',
-    paddingBottom: 10,
   },
   icon: {
 
