@@ -24,7 +24,7 @@ function App() {
   );
 }
 
-export function AppWrapped() {
+export default function AppWrapped() {
   return (
     <PaperProvider>
       <App />
