@@ -123,9 +123,9 @@ function LessonAccordion({ title, steps, contents }) {
   return (
     <List.Accordion
       title={`${title}${steps ? ` - ${steps} steps` : ''}`}
-      left={(props) => <List.Icon {...props} icon="plus" color="black"/>}
+      left={(props) => <List.Icon {...props} icon="plus" color="black" fontFamily= "georgia"/>}
       style={{ backgroundColor: '#FFDDDD' }}
-      titleStyle={{ color: 'black', fontWeight: 'bold'}} 
+      titleStyle={{ color: 'black', fontWeight: 'bold', fontFamily: "georgia"}} 
     >
       {contents &&
         contents.map((content) => (
@@ -163,7 +163,7 @@ export default function EducationScreen() {
 
         <View style={styles.videoContainer}>
           <ReactPlayer url="https://youtu.be/_v4TPH8Wlcw" />
-        </View>
+        </View>  
 
         <Text style={styles.title}>About</Text>
         <About />
@@ -180,6 +180,7 @@ export default function EducationScreen() {
     </SafeAreaView>
   );
 }
+
 
 const styles = StyleSheet.create({
   safeArea: {
@@ -200,12 +201,14 @@ const styles = StyleSheet.create({
     fontSize: 28,
     lineHeight: 40,
     fontWeight: 'bold',
+    fontFamily: 'cursive',
     color: '#281b52',
     textAlign: 'center',
     marginBottom: 20,
   },
   paragraph: {
     fontSize: 18,
+    fontFamily: "georgia",
     marginBottom: 12,
     color: '#555',
   },
@@ -215,6 +218,7 @@ const styles = StyleSheet.create({
   },
   contentText: {
     color: 'black',
+    fontFamily: "georgia",
   },
   videoContainer: {
     flex: 1,
@@ -223,6 +227,11 @@ const styles = StyleSheet.create({
     marginVertical: 20,
   },
   centeredText: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
