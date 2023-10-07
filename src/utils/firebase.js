@@ -32,8 +32,8 @@ const getFirebaseAuth = () => {
 const signUp = async (email, password) => {
   const auth = getFirebaseAuth()
   try {
-    const res = await createUserWithEmailAndPassword(auth, email, password)
-    return res.user
+    const user = await createUserWithEmailAndPassword(auth, email, password)
+    return user
   }
   catch (e) {
     return null
@@ -44,8 +44,8 @@ const signUp = async (email, password) => {
 const signIn = async (email, password) => {
   const auth = getFirebaseAuth()
   try {
-    const res = await signInWithEmailAndPassword(auth, email, password)
-    return res.user
+    const user = await signInWithEmailAndPassword(auth, email, password)
+    return user
   }
   catch (e) {
     return null
