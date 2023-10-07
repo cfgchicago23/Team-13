@@ -61,12 +61,23 @@ export default function Settings() {
     },
     settingstext: {
       color: theme.text,
+      alignSelf: "center",
       fontSize: 25,
+      marginBottom: 5,
       fontWeight: "bold",
     },
     text: {
       color: theme.text,
       fontSize: 15,
+    },
+    footer: {
+      position: "absolute",
+      bottom: 10,
+      left: 0,
+      right: 0,
+      textAlign: "center",
+      fontSize: 12,
+      color: theme.text,
     },
   });
 
@@ -83,6 +94,7 @@ export default function Settings() {
             trackColor={{ false: "#ccc", true: "#888" }}
           />
         </View>
+        <Text style={styles.footer}>Version 1.0.0</Text>
       </View>
     </ThemeContext.Provider>
   );

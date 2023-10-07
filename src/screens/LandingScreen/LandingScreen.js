@@ -37,8 +37,9 @@ export default function Example({ navigation }) {
 
         <TouchableOpacity
           onPress={() => {
-            navigation.navigate("Education")
-          }}>
+            navigation.navigate("Education");
+          }}
+        >
           <View style={styles.button}>
             <Text style={styles.buttonText}>Student</Text>
           </View>
@@ -54,8 +55,9 @@ export default function Example({ navigation }) {
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
-            navigation.navigate("Help")
-          }}>
+            navigation.navigate("Help");
+          }}
+        >
           <View style={styles.button}>
             <Text style={styles.buttonText}>Get Help</Text>
           </View>
