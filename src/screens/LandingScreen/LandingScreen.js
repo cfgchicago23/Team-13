@@ -51,6 +51,11 @@ export default function Example() {
             <View style={styles.button}>
               <Text style={styles.buttonText}>Sign In</Text>
             </View>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              // handle onPress
+            }}>
             <View style={styles.button}>
               <Text style={styles.buttonText}>Sign Up</Text>
             </View>
