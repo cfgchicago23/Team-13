@@ -22,8 +22,7 @@ const Login = ({ navigation }) => {
     return (
         //<>
         <View style={styles.container}>
-            <Text style={styles.header}>Log In</Text>
-
+            {/* <Text style={styles.header}>Log In</Text> */}
             <View style={styles.hero}>
                 <Image
                     source={require('./empower.png')}
@@ -32,7 +31,7 @@ const Login = ({ navigation }) => {
                 />
             </View>
             <View style={styles.space}></View>
-
+        
             <View style={styles.content}>
                 <View style={styles.hero}>
 
@@ -77,12 +76,14 @@ const styles = {
         fontSize: 24,
         fontWeight: 'bold',
         textAlign: 'center',
-        marginBottom: 20,
+        marginTop: -30,
+        marginBottom: 20
     },
     hero: {
         backgroundColor: 'white',
         borderRadius: 16,
         padding: 16,
+        marginBottom: -70
     },
     space: {
         height: 40,
