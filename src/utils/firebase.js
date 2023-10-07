@@ -29,4 +29,4 @@ const getFirebaseAuth = () => {
   return getAuth(app)
 }
 
-export { initFirebaseApp }
+export { initFirebaseApp, getFirebaseStore }

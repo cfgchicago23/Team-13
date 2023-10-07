@@ -9,6 +9,8 @@ import Community from "./src/screens/CommunityScreen/CommunityScreen";
 import { initFirebaseApp } from './src/utils/firebase';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Clubs from "./src/screens/CommunityScreen/ClubsScreen";
+import Club from "./src/screens/CommunityScreen/ClubScreen";
 
 const app = initFirebaseApp()
 const Stack = createNativeStackNavigator()
@@ -23,6 +25,7 @@ function App() {
         <Stack.Screen name="Education" component={ Education } />
         <Stack.Screen name="Help" component={ HelpScreen} />
         <Stack.Screen name="Auth" component={ AuthPage } />
+        <Stack.Screen name="Club" component={ Club } options={({ route }) => ({ title: route.params.club.name })}/>
         {/* <Stack.Screen name="Community" component={ Community } /> */}
       </Stack.Navigator>
     </NavigationContainer>

@@ -5,18 +5,23 @@ import Clubs from './ClubsScreen';
 import Forums from './ForumsScreen';
 import NewsFeed from './NewsfeedScreen';
 import Settings from './SettingsScreen';
+import Notifications from './NotificationsScreen';
 
-const SettingsRoute = () => <Settings />;
+const Community = ({ navigation }) => {
+  
+  const SettingsRoute = () => <Settings />;
 
-const NewsFeedRoute = () => <NewsFeed />;
+  const NewsFeedRoute = () => <NewsFeed />;
 
-const ClubsRoute = () => <Clubs />;
+  const ClubsRoute = () => <Clubs navigation={ navigation }/>;
 
-const ForumsRoute = () => <Forums />;
+  const ForumsRoute = () => <Forums />;
 
-const MyComponent = () => {
+  const NotificationsRoute = () => <Notifications />;
+
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
+    { key: 'notifications', title: "Notifs", focusedIcon: 'bell', unfocusedIcon: 'bell-outline'},
     { key: 'forums', title: 'Chat', focusedIcon: 'chat', unfocusedIcon: 'chat-outline'},
     { key: 'newsfeed', title: 'News', focusedIcon: 'newspaper-variant', unfocusedIcon: 'newspaper-variant-outline' },
     { key: 'clubs', title: 'Clubs', focusedIcon: 'hand-heart', unfocusedIcon: 'hand-heart-outline' },
@@ -28,6 +33,7 @@ const MyComponent = () => {
     newsfeed: NewsFeedRoute,
     clubs: ClubsRoute,
     settings: SettingsRoute,
+    notifications: NotificationsRoute
   });
 
   return (
@@ -39,4 +45,4 @@ const MyComponent = () => {
   );
 };
 
-export default MyComponent;
+export default Community;
