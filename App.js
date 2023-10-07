@@ -35,7 +35,7 @@ function App() {
 export default function AppWrapped() {
   return (
     <PaperProvider>
-      <Signup />
+      <App />
     </PaperProvider>
   );
 }
